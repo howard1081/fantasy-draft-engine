@@ -109,6 +109,9 @@ export function rosterNeedScore(position, counts, round, settings = DEFAULT_SETT
 
   if (position === 'TE' && counts.TE === 0) score += round >= 5 ? 5 : 2;
   if (position === 'QB' && counts.QB === 0) score += round >= 5 ? 8 : 0;
+  if ((position === 'DST' || position === 'K') && counts[position] === 0 && round >= settings.kDstStartRound) {
+    score += 30;
+  }
   if (position === 'QB' && counts.QB >= 1 && round < 11) score -= 46;
   if (position === 'TE' && counts.TE >= 1 && round < 11) score -= 26;
   if ((position === 'DST' || position === 'K') && round < settings.kDstStartRound) score -= 80;
@@ -232,12 +235,12 @@ export function demandMultipliers(state, derived, settings = DEFAULT_SETTINGS) {
 
 function saturationPenalty(position, counts, round) {
   if (position === 'QB') {
-    if (counts.QB >= 2 && round < 13) return 32;
-    if (counts.QB >= 1 && round < 11) return 18;
+    if (counts.QB >= 2) return round < 13 ? 32 : 38;
+    if (counts.QB >= 1) return round < 11 ? 18 : 15;
   }
   if (position === 'TE') {
-    if (counts.TE >= 2 && round < 13) return 22;
-    if (counts.TE >= 1 && round < 11) return 10;
+    if (counts.TE >= 2) return round < 13 ? 22 : 26;
+    if (counts.TE >= 1) return round < 11 ? 10 : 8;
   }
   if (position === 'RB') return Math.max(0, counts.RB - 5) * 4;
   if (position === 'WR') return Math.max(0, counts.WR - 6) * 4;
@@ -307,6 +310,7 @@ export function scorePlayer(player, context) {
     reach: reachPenalty(player, state.pickNumber),
     riskConcentration: riskConcentrationPenalty(player, myPlayers),
     byeOverlap: byeOverlapPenalty(player, myPlayers),
+    timing: ['DST', 'K'].includes(player.position) && round < settings.kDstStartRound ? 100 : 0,
   };
   const modifiers = {
     stack: stackModifier(player, myPlayers),
@@ -325,6 +329,7 @@ export function scorePlayer(player, context) {
     - penalties.reach
     - penalties.riskConcentration
     - penalties.byeOverlap
+    - penalties.timing
     + modifiers.stack
   );
 

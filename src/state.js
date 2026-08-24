@@ -27,6 +27,20 @@ export function createInitialState(settings = DEFAULT_SETTINGS) {
   };
 }
 
+function opponentTeamForPick(pickNumber, settings) {
+  const onClock = teamOnClock(pickNumber, settings.teams);
+  if (onClock !== settings.mySlot) return onClock;
+
+  const maxPick = settings.teams * settings.rounds;
+  const adjacentPicks = [pickNumber - 1, pickNumber + 1]
+    .filter((pick) => pick >= 1 && pick <= maxPick);
+  for (const pick of adjacentPicks) {
+    const team = teamOnClock(pick, settings.teams);
+    if (team !== settings.mySlot) return team;
+  }
+  return settings.mySlot === 1 ? 2 : 1;
+}
+
 export function applyPick(state, playerId, owner) {
   if (!['ME', 'OPPONENT'].includes(owner)) throw new Error('Invalid draft owner');
   if (state.events.some((event) => event.playerId === playerId)) {
@@ -36,7 +50,9 @@ export function applyPick(state, playerId, owner) {
   const maxPick = settings.teams * settings.rounds;
   if (state.pickNumber > maxPick) throw new Error('Draft is complete');
   const onClock = teamOnClock(state.pickNumber, settings.teams);
-  const teamIndex = owner === 'ME' ? settings.mySlot : onClock;
+  const teamIndex = owner === 'ME'
+    ? settings.mySlot
+    : opponentTeamForPick(state.pickNumber, settings);
   const event = {
     pick: state.pickNumber,
     round: roundForPick(state.pickNumber, settings.teams),
@@ -83,7 +99,7 @@ export function validateState(candidate, playerIds = null) {
       round: roundForPick(pick, settings.teams),
       teamIndex: event.owner === 'ME'
         ? settings.mySlot
-        : teamOnClock(pick, settings.teams),
+        : opponentTeamForPick(pick, settings),
       playerId: event.playerId,
       owner: event.owner === 'ME' ? 'ME' : 'OPPONENT',
       timestamp: Number(event.timestamp) || Date.now(),
