@@ -1,0 +1,9 @@
+{
+  "name": "V3.1 Live Draft Engine",
+  "short_name": "Draft Engine",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "description": "Live roster-aware full-PPR fantasy draft recommendations."
+}

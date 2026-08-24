@@ -1,0 +1,9 @@
+{
+  "snapshotDate": "2026-08-24T04:34:13.851Z",
+  "season": 2026,
+  "scoring": "Full PPR",
+  "leagueSize": 12,
+  "playerCount": 268,
+  "adpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
+  "methodology": "V3.1 seed overrides merged onto a current market/ADP baseline"
+}

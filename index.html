@@ -1,34 +1,38 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="A live, roster-aware full-PPR fantasy football draft decision engine.">
   <title>V3.1 Live Draft Engine</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <div>
-      <div class="eyebrow">2026 • FULL PPR • V3.1</div>
+      <div class="eyebrow">2026 · FULL PPR · V3.1</div>
       <h1>Live Draft Engine</h1>
     </div>
     <div class="top-actions">
-      <button id="undoBtn" class="ghost">Undo</button>
-      <button id="settingsBtn" class="ghost">Settings</button>
+      <button id="undoBtn" class="button ghost" type="button">Undo</button>
+      <button id="settingsBtn" class="button ghost" type="button">Settings</button>
     </div>
   </header>
 
   <main class="layout">
     <section class="main-column">
-      <div class="status-row card">
+      <section class="status-row card" aria-label="Draft status">
         <div><span class="label">Pick</span><strong id="pickNumber">1</strong></div>
         <div><span class="label">Round</span><strong id="roundNumber">1</strong></div>
         <div><span class="label">On clock</span><strong id="onClock">Team 1</strong></div>
         <div><span class="label">My next</span><strong id="nextPick">1</strong></div>
-      </div>
+      </section>
 
-      <section id="hero" class="hero card"></section>
+      <section id="hero" class="hero card" aria-live="polite"></section>
 
       <section class="card">
         <div class="section-head">
@@ -36,34 +40,55 @@
             <div class="eyebrow">LIVE BOARD</div>
             <h2>Best options now</h2>
           </div>
-          <div class="filters" id="positionFilters"></div>
         </div>
         <div id="recommendations" class="recommendations"></div>
       </section>
 
       <section class="card">
-        <div class="section-head">
+        <div class="section-head available-head">
           <div>
             <div class="eyebrow">AVAILABLE PLAYERS</div>
             <h2>Mark picks instantly</h2>
           </div>
-          <input id="searchInput" type="search" placeholder="Search player" autocomplete="off" />
+          <input id="searchInput" type="search" placeholder="Search player or team" autocomplete="off">
         </div>
+        <div id="positionFilters" class="filters" aria-label="Position filters"></div>
         <div id="availableList" class="player-list"></div>
       </section>
     </section>
 
     <aside class="side-column">
-      <section class="card sticky">
-        <div class="eyebrow">MY TEAM</div>
-        <h2 id="myTeamTitle">Draft slot 1</h2>
-        <div id="roster" class="roster"></div>
+      <section class="card roster-card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">MY TEAM</div>
+            <h2 id="myTeamTitle">Draft slot 1</h2>
+          </div>
+          <span id="rosterCount" class="count-pill">0 / 16</span>
+        </div>
         <div id="rosterNeeds" class="needs"></div>
+        <div id="roster" class="roster"></div>
       </section>
 
       <section class="card">
-        <div class="eyebrow">RECENT PICKS</div>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">RECENT PICKS</div>
+            <h2>Draft log</h2>
+          </div>
+        </div>
         <div id="recentPicks" class="recent-picks"></div>
+      </section>
+
+      <section class="card utility-card">
+        <div class="eyebrow">DRAFT BACKUP</div>
+        <div class="utility-actions">
+          <button id="exportBtn" class="button ghost" type="button">Export state</button>
+          <button id="importBtn" class="button ghost" type="button">Import state</button>
+          <button id="resetBtn" class="button danger" type="button">Reset draft</button>
+        </div>
+        <input id="importInput" type="file" accept="application/json,.json" hidden>
+        <p id="dataSnapshot" class="muted"></p>
       </section>
     </aside>
   </main>
@@ -76,20 +101,26 @@
       </div>
       <label>Teams
         <select id="teamsSelect">
-          <option>10</option><option selected>12</option>
+          <option value="10">10</option>
+          <option value="12" selected>12</option>
+          <option value="14">14</option>
         </select>
+      </label>
+      <label>Rounds
+        <input id="roundsInput" type="number" min="10" max="20" value="16">
       </label>
       <label>Your draft slot
         <select id="slotSelect"></select>
       </label>
-      <p class="muted">Changing settings resets the current draft.</p>
+      <p class="muted">Applying league settings resets the current draft.</p>
       <div class="dialog-actions">
-        <button value="cancel" class="ghost">Cancel</button>
-        <button id="applySettings" value="default" class="primary">Apply & reset</button>
+        <button value="cancel" class="button ghost">Cancel</button>
+        <button id="applySettings" value="default" class="button primary">Apply & reset</button>
       </div>
     </form>
   </dialog>
 
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script type="module" src="src/app.js"></script>
 </body>
 </html>

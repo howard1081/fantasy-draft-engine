@@ -1,0 +1,5365 @@
+[
+  {
+    "id": "jahmyr-gibbs",
+    "name": "Jahmyr Gibbs",
+    "team": "DET",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 1,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 99,
+    "adp": 1.6,
+    "adpSd": 0.7,
+    "upside": 96,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "Elite PPR role",
+      "RB1 tier"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "bijan-robinson",
+    "name": "Bijan Robinson",
+    "team": "ATL",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 2,
+    "positionRank": 2,
+    "tier": 1,
+    "projectionValue": 98,
+    "adp": 1.9,
+    "adpSd": 0.7,
+    "upside": 96,
+    "risk": 18,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "jamar-chase",
+    "name": "Ja'Marr Chase",
+    "team": "CIN",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 3,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 98,
+    "adp": 3.9,
+    "adpSd": 1,
+    "upside": 95,
+    "risk": 16,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "puka-nacua",
+    "name": "Puka Nacua",
+    "team": "LAR",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 4,
+    "positionRank": 2,
+    "tier": 1,
+    "projectionValue": 97,
+    "adp": 3.1,
+    "adpSd": 0.9,
+    "upside": 95,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "Elite role overrides difficult projected SOS"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "jaxon-smith-njigba",
+    "name": "Jaxon Smith-Njigba",
+    "team": "SEA",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 5,
+    "positionRank": 3,
+    "tier": 1,
+    "projectionValue": 96,
+    "adp": 5.4,
+    "adpSd": 1.1,
+    "upside": 96,
+    "risk": 18,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "amon-ra-st-brown",
+    "name": "Amon-Ra St. Brown",
+    "team": "DET",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 6,
+    "positionRank": 4,
+    "tier": 1,
+    "projectionValue": 95,
+    "adp": 6.3,
+    "adpSd": 1.3,
+    "upside": 91,
+    "risk": 14,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "jonathan-taylor",
+    "name": "Jonathan Taylor",
+    "team": "IND",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 7,
+    "positionRank": 3,
+    "tier": 1,
+    "projectionValue": 94,
+    "adp": 7.5,
+    "adpSd": 1.7,
+    "upside": 92,
+    "risk": 22,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "christian-mccaffrey",
+    "name": "Christian McCaffrey",
+    "team": "SF",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 8,
+    "positionRank": 4,
+    "tier": 1,
+    "projectionValue": 94,
+    "adp": 6.6,
+    "adpSd": 1.6,
+    "upside": 98,
+    "risk": 48,
+    "status": "ACTIVE",
+    "notes": [
+      "Elite PPR ceiling",
+      "Age/workload health discount"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "james-cook",
+    "name": "James Cook III",
+    "team": "BUF",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 9,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 92,
+    "adp": 12.7,
+    "adpSd": 2.9,
+    "upside": 90,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "ceedee-lamb",
+    "name": "CeeDee Lamb",
+    "team": "DAL",
+    "position": "WR",
+    "bye": 14,
+    "v31Rank": 10,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 92,
+    "adp": 10.6,
+    "adpSd": 2,
+    "upside": 94,
+    "risk": 18,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "justin-jefferson",
+    "name": "Justin Jefferson",
+    "team": "MIN",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 11,
+    "positionRank": 6,
+    "tier": 2,
+    "projectionValue": 91,
+    "adp": 11.7,
+    "adpSd": 2.3,
+    "upside": 94,
+    "risk": 22,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "chase-brown",
+    "name": "Chase Brown",
+    "team": "CIN",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 12,
+    "positionRank": 6,
+    "tier": 2,
+    "projectionValue": 90,
+    "adp": 13.4,
+    "adpSd": 2.6,
+    "upside": 91,
+    "risk": 24,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "devon-achane",
+    "name": "De'Von Achane",
+    "team": "MIA",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 13,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 90,
+    "adp": 10.4,
+    "adpSd": 1.9,
+    "upside": 96,
+    "risk": 36,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "drake-london",
+    "name": "Drake London",
+    "team": "ATL",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 14,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 89,
+    "adp": 9.9,
+    "adpSd": 1.6,
+    "upside": 92,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "saquon-barkley",
+    "name": "Saquon Barkley",
+    "team": "PHI",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 16,
+    "positionRank": 9,
+    "tier": 2,
+    "projectionValue": 87,
+    "adp": 19.7,
+    "adpSd": 3.3,
+    "upside": 92,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "nico-collins",
+    "name": "Nico Collins",
+    "team": "HOU",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 17,
+    "positionRank": 8,
+    "tier": 2,
+    "projectionValue": 87,
+    "adp": 21.2,
+    "adpSd": 2.9,
+    "upside": 91,
+    "risk": 25,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "derrick-henry",
+    "name": "Derrick Henry",
+    "team": "BAL",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 18,
+    "positionRank": 10,
+    "tier": 2,
+    "projectionValue": 86,
+    "adp": 17.6,
+    "adpSd": 2.6,
+    "upside": 89,
+    "risk": 31,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "trey-mcbride",
+    "name": "Trey McBride",
+    "team": "ARI",
+    "position": "TE",
+    "bye": 14,
+    "v31Rank": 19,
+    "positionRank": 2,
+    "tier": 1,
+    "projectionValue": 91,
+    "adp": 28.8,
+    "adpSd": 4.7,
+    "upside": 92,
+    "risk": 17,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "brock-bowers",
+    "name": "Brock Bowers",
+    "team": "LV",
+    "position": "TE",
+    "bye": 13,
+    "v31Rank": 20,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 92,
+    "adp": 35.5,
+    "adpSd": 7.1,
+    "upside": 95,
+    "risk": 17,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "omarion-hampton",
+    "name": "Omarion Hampton",
+    "team": "LAC",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 21,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 84,
+    "adp": 23.2,
+    "adpSd": 4.4,
+    "upside": 93,
+    "risk": 29,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "chris-olave",
+    "name": "Chris Olave",
+    "team": "NO",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 22,
+    "positionRank": 9,
+    "tier": 3,
+    "projectionValue": 86,
+    "adp": 20.2,
+    "adpSd": 3.6,
+    "upside": 91,
+    "risk": 25,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "aj-brown",
+    "name": "A.J. Brown",
+    "team": "NE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 23,
+    "positionRank": 10,
+    "tier": 3,
+    "projectionValue": 85,
+    "adp": 18.2,
+    "adpSd": 3.2,
+    "upside": 90,
+    "risk": 27,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "kenneth-walker",
+    "name": "Kenneth Walker",
+    "team": "KC",
+    "position": "RB",
+    "bye": 5,
+    "v31Rank": 23,
+    "positionRank": 11,
+    "tier": 2,
+    "projectionValue": 79.7,
+    "adp": 22.2,
+    "adpSd": 4,
+    "upside": 82.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "devonta-smith",
+    "name": "DeVonta Smith",
+    "team": "PHI",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 24,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 85,
+    "adp": 29.6,
+    "adpSd": 3.7,
+    "upside": 92,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "Clear role-growth signal"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "garrett-wilson",
+    "name": "Garrett Wilson",
+    "team": "NYJ",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 25,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 84,
+    "adp": 26.1,
+    "adpSd": 2.9,
+    "upside": 90,
+    "risk": 26,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "george-pickens",
+    "name": "George Pickens",
+    "team": "DAL",
+    "position": "WR",
+    "bye": 14,
+    "v31Rank": 26,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 83,
+    "adp": 19.8,
+    "adpSd": 2.9,
+    "upside": 91,
+    "risk": 27,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "zay-flowers",
+    "name": "Zay Flowers",
+    "team": "BAL",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 27,
+    "positionRank": 14,
+    "tier": 3,
+    "projectionValue": 82,
+    "adp": 25.2,
+    "adpSd": 2.9,
+    "upside": 88,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "jeremiyah-love",
+    "name": "Jeremiyah Love",
+    "team": "ARI",
+    "position": "RB",
+    "bye": 14,
+    "v31Rank": 28,
+    "positionRank": 13,
+    "tier": 2,
+    "projectionValue": 77.4,
+    "adp": 27.9,
+    "adpSd": 3.7,
+    "upside": 80.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kyren-williams",
+    "name": "Kyren Williams",
+    "team": "LAR",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 28,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 82,
+    "adp": 31.5,
+    "adpSd": 4.4,
+    "upside": 86,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "tee-higgins",
+    "name": "Tee Higgins",
+    "team": "CIN",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 29,
+    "positionRank": 16,
+    "tier": 3,
+    "projectionValue": 81,
+    "adp": 36.2,
+    "adpSd": 5,
+    "upside": 88,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "josh-allen",
+    "name": "Josh Allen",
+    "team": "BUF",
+    "position": "QB",
+    "bye": 7,
+    "v31Rank": 30,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 100,
+    "adp": 33.7,
+    "adpSd": 8.5,
+    "upside": 98,
+    "risk": 14,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "malik-nabers",
+    "name": "Malik Nabers",
+    "team": "NYG",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 31,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 81,
+    "adp": 27.3,
+    "adpSd": 3.6,
+    "upside": 95,
+    "risk": 48,
+    "status": "ACTIVE",
+    "notes": [
+      "Health/recovery risk"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "rashee-rice",
+    "name": "Rashee Rice",
+    "team": "KC",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 32,
+    "positionRank": 17,
+    "tier": 4,
+    "projectionValue": 79,
+    "adp": 14.8,
+    "adpSd": 2.2,
+    "upside": 91,
+    "risk": 35,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "tetairoa-mcmillan",
+    "name": "Tetairoa McMillan",
+    "team": "CAR",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 33,
+    "positionRank": 18,
+    "tier": 4,
+    "projectionValue": 78,
+    "adp": 32.9,
+    "adpSd": 3.6,
+    "upside": 92,
+    "risk": 26,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "ladd-mcconkey",
+    "name": "Ladd McConkey",
+    "team": "LAC",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 34,
+    "positionRank": 19,
+    "tier": 4,
+    "projectionValue": 78,
+    "adp": 37.7,
+    "adpSd": 4.3,
+    "upside": 89,
+    "risk": 22,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "jaylen-waddle",
+    "name": "Jaylen Waddle",
+    "team": "DEN",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 35,
+    "positionRank": 20,
+    "tier": 4,
+    "projectionValue": 77,
+    "adp": 46,
+    "adpSd": 5.5,
+    "upside": 88,
+    "risk": 26,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "josh-jacobs",
+    "name": "Josh Jacobs",
+    "team": "GB",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 36,
+    "positionRank": 14,
+    "tier": 3,
+    "projectionValue": 79,
+    "adp": 30.9,
+    "adpSd": 4.1,
+    "upside": 84,
+    "risk": 27,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "emeka-egbuka",
+    "name": "Emeka Egbuka",
+    "team": "TB",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 36,
+    "positionRank": 18,
+    "tier": 3,
+    "projectionValue": 74.4,
+    "adp": 35.2,
+    "adpSd": 4.2,
+    "upside": 74.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "breece-hall",
+    "name": "Breece Hall",
+    "team": "NYJ",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 37,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 78,
+    "adp": 34.6,
+    "adpSd": 5.2,
+    "upside": 91,
+    "risk": 29,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "colston-loveland",
+    "name": "Colston Loveland",
+    "team": "CHI",
+    "position": "TE",
+    "bye": 10,
+    "v31Rank": 38,
+    "positionRank": 3,
+    "tier": 2,
+    "projectionValue": 84,
+    "adp": 56.5,
+    "adpSd": 9,
+    "upside": 93,
+    "risk": 22,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "cam-skattebo",
+    "name": "Cam Skattebo",
+    "team": "NYG",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 39,
+    "positionRank": 17,
+    "tier": 3,
+    "projectionValue": 73.4,
+    "adp": 36.4,
+    "adpSd": 5,
+    "upside": 75.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "lamar-jackson",
+    "name": "Lamar Jackson",
+    "team": "BAL",
+    "position": "QB",
+    "bye": 13,
+    "v31Rank": 39,
+    "positionRank": 2,
+    "tier": 2,
+    "projectionValue": 92,
+    "adp": 56.7,
+    "adpSd": 7.3,
+    "upside": 97,
+    "risk": 24,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "javonte-williams",
+    "name": "Javonte Williams",
+    "team": "DAL",
+    "position": "RB",
+    "bye": 14,
+    "v31Rank": 40,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 79,
+    "adp": 36.7,
+    "adpSd": 4.7,
+    "upside": 86,
+    "risk": 27,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "travis-etienne-jr",
+    "name": "Travis Etienne Jr.",
+    "team": "NO",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 42,
+    "positionRank": 19,
+    "tier": 3,
+    "projectionValue": 72.5,
+    "adp": 40.7,
+    "adpSd": 4.8,
+    "upside": 73.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "davante-adams",
+    "name": "Davante Adams",
+    "team": "LAR",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 43,
+    "positionRank": 21,
+    "tier": 3,
+    "projectionValue": 72.2,
+    "adp": 41.8,
+    "adpSd": 4.4,
+    "upside": 70.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jameson-williams",
+    "name": "Jameson Williams",
+    "team": "DET",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 44,
+    "positionRank": 22,
+    "tier": 3,
+    "projectionValue": 71.9,
+    "adp": 44,
+    "adpSd": 4.2,
+    "upside": 69.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "bucky-irving",
+    "name": "Bucky Irving",
+    "team": "TB",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 45,
+    "positionRank": 20,
+    "tier": 3,
+    "projectionValue": 71.6,
+    "adp": 45.3,
+    "adpSd": 4.5,
+    "upside": 72,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "d-andre-swift",
+    "name": "D'Andre Swift",
+    "team": "CHI",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 46,
+    "positionRank": 21,
+    "tier": 3,
+    "projectionValue": 71.4,
+    "adp": 45.8,
+    "adpSd": 4.4,
+    "upside": 70.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "terry-mclaurin",
+    "name": "Terry McLaurin",
+    "team": "WAS",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 48,
+    "positionRank": 24,
+    "tier": 3,
+    "projectionValue": 70.8,
+    "adp": 46.7,
+    "adpSd": 4.6,
+    "upside": 67.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dj-moore",
+    "name": "DJ Moore",
+    "team": "BUF",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 49,
+    "positionRank": 25,
+    "tier": 3,
+    "projectionValue": 70.5,
+    "adp": 48.9,
+    "adpSd": 6.3,
+    "upside": 66,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "quinshon-judkins",
+    "name": "Quinshon Judkins",
+    "team": "CLE",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 50,
+    "positionRank": 22,
+    "tier": 3,
+    "projectionValue": 70.3,
+    "adp": 50.9,
+    "adpSd": 5.3,
+    "upside": 69.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rome-odunze",
+    "name": "Rome Odunze",
+    "team": "CHI",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 51,
+    "positionRank": 26,
+    "tier": 3,
+    "projectionValue": 70,
+    "adp": 51.4,
+    "adpSd": 6.1,
+    "upside": 64.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "bhayshul-tuten",
+    "name": "Bhayshul Tuten",
+    "team": "JAX",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 53,
+    "positionRank": 23,
+    "tier": 3,
+    "projectionValue": 69.5,
+    "adp": 52.9,
+    "adpSd": 5.8,
+    "upside": 68.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "mike-evans",
+    "name": "Mike Evans",
+    "team": "SF",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 54,
+    "positionRank": 27,
+    "tier": 3,
+    "projectionValue": 69.3,
+    "adp": 53.6,
+    "adpSd": 6.2,
+    "upside": 63.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "drake-maye",
+    "name": "Drake Maye",
+    "team": "NE",
+    "position": "QB",
+    "bye": 11,
+    "v31Rank": 57,
+    "positionRank": 4,
+    "tier": 3,
+    "projectionValue": 85,
+    "adp": 51.6,
+    "adpSd": 7.6,
+    "upside": 95,
+    "risk": 26,
+    "status": "ACTIVE",
+    "notes": [
+      "2025 breakout real but historically soft schedule",
+      "Year-3 regression guardrail"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "david-montgomery",
+    "name": "David Montgomery",
+    "team": "HOU",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 58,
+    "positionRank": 24,
+    "tier": 3,
+    "projectionValue": 68.3,
+    "adp": 58.4,
+    "adpSd": 6.5,
+    "upside": 67.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jalen-hurts",
+    "name": "Jalen Hurts",
+    "team": "PHI",
+    "position": "QB",
+    "bye": 10,
+    "v31Rank": 58,
+    "positionRank": 3,
+    "tier": 2,
+    "projectionValue": 88,
+    "adp": 79.7,
+    "adpSd": 11.8,
+    "upside": 94,
+    "risk": 22,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "joe-burrow",
+    "name": "Joe Burrow",
+    "team": "CIN",
+    "position": "QB",
+    "bye": 6,
+    "v31Rank": 59,
+    "positionRank": 6,
+    "tier": 3,
+    "projectionValue": 83,
+    "adp": 57.4,
+    "adpSd": 7.9,
+    "upside": 91,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "christian-watson",
+    "name": "Christian Watson",
+    "team": "GB",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 59,
+    "positionRank": 28,
+    "tier": 3,
+    "projectionValue": 68.1,
+    "adp": 58.7,
+    "adpSd": 6.4,
+    "upside": 62.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jaylen-warren",
+    "name": "Jaylen Warren",
+    "team": "PIT",
+    "position": "RB",
+    "bye": 9,
+    "v31Rank": 60,
+    "positionRank": 25,
+    "tier": 3,
+    "projectionValue": 67.9,
+    "adp": 59,
+    "adpSd": 6.2,
+    "upside": 66,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jayden-daniels",
+    "name": "Jayden Daniels",
+    "team": "WAS",
+    "position": "QB",
+    "bye": 7,
+    "v31Rank": 60,
+    "positionRank": 5,
+    "tier": 3,
+    "projectionValue": 84,
+    "adp": 71.9,
+    "adpSd": 11.8,
+    "upside": 97,
+    "risk": 35,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "luther-burden-iii",
+    "name": "Luther Burden III",
+    "team": "CHI",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 61,
+    "positionRank": 29,
+    "tier": 3,
+    "projectionValue": 67.7,
+    "adp": 59.3,
+    "adpSd": 7.7,
+    "upside": 65.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "courtland-sutton",
+    "name": "Courtland Sutton",
+    "team": "DEN",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 62,
+    "positionRank": 30,
+    "tier": 3,
+    "projectionValue": 67.5,
+    "adp": 60.3,
+    "adpSd": 6.7,
+    "upside": 64,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "treveyon-henderson",
+    "name": "TreVeyon Henderson",
+    "team": "NE",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 63,
+    "positionRank": 26,
+    "tier": 3,
+    "projectionValue": 67.3,
+    "adp": 60.7,
+    "adpSd": 6.4,
+    "upside": 68.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "alec-pierce",
+    "name": "Alec Pierce",
+    "team": "IND",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 64,
+    "positionRank": 31,
+    "tier": 4,
+    "projectionValue": 67,
+    "adp": 63.2,
+    "adpSd": 8.3,
+    "upside": 62.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "parker-washington",
+    "name": "Parker Washington",
+    "team": "JAX",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 65,
+    "positionRank": 32,
+    "tier": 4,
+    "projectionValue": 66.8,
+    "adp": 64.7,
+    "adpSd": 7.6,
+    "upside": 61.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dk-metcalf",
+    "name": "DK Metcalf",
+    "team": "PIT",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 66,
+    "positionRank": 33,
+    "tier": 4,
+    "projectionValue": 66.6,
+    "adp": 64.8,
+    "adpSd": 7.3,
+    "upside": 60.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "justin-herbert",
+    "name": "Justin Herbert",
+    "team": "LAC",
+    "position": "QB",
+    "bye": 7,
+    "v31Rank": 66,
+    "positionRank": 7,
+    "tier": 4,
+    "projectionValue": 81,
+    "adp": 105.8,
+    "adpSd": 14.6,
+    "upside": 91,
+    "risk": 20,
+    "status": "ACTIVE",
+    "notes": [
+      "Major draft-value target"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  },
+  {
+    "id": "tyler-warren",
+    "name": "Tyler Warren",
+    "team": "IND",
+    "position": "TE",
+    "bye": 13,
+    "v31Rank": 67,
+    "positionRank": 4,
+    "tier": 2,
+    "projectionValue": 66.4,
+    "adp": 64.9,
+    "adpSd": 9.4,
+    "upside": 89.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dak-prescott",
+    "name": "Dak Prescott",
+    "team": "DAL",
+    "position": "QB",
+    "bye": 14,
+    "v31Rank": 68,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 66.2,
+    "adp": 65.3,
+    "adpSd": 7.8,
+    "upside": 91,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "marvin-harrison-jr",
+    "name": "Marvin Harrison Jr.",
+    "team": "ARI",
+    "position": "WR",
+    "bye": 14,
+    "v31Rank": 69,
+    "positionRank": 34,
+    "tier": 4,
+    "projectionValue": 66,
+    "adp": 66.1,
+    "adpSd": 7.8,
+    "upside": 59.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tony-pollard",
+    "name": "Tony Pollard",
+    "team": "TEN",
+    "position": "RB",
+    "bye": 9,
+    "v31Rank": 70,
+    "positionRank": 27,
+    "tier": 4,
+    "projectionValue": 65.8,
+    "adp": 68.4,
+    "adpSd": 7.2,
+    "upside": 67.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rhamondre-stevenson",
+    "name": "Rhamondre Stevenson",
+    "team": "NE",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 71,
+    "positionRank": 28,
+    "tier": 4,
+    "projectionValue": 65.6,
+    "adp": 68.9,
+    "adpSd": 6.9,
+    "upside": 66.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brian-thomas-jr",
+    "name": "Brian Thomas Jr.",
+    "team": "JAX",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 73,
+    "positionRank": 35,
+    "tier": 4,
+    "projectionValue": 65.3,
+    "adp": 72.1,
+    "adpSd": 7.6,
+    "upside": 58,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "michael-pittman-jr",
+    "name": "Michael Pittman Jr.",
+    "team": "PIT",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 74,
+    "positionRank": 36,
+    "tier": 4,
+    "projectionValue": 65.1,
+    "adp": 74.6,
+    "adpSd": 7.9,
+    "upside": 56.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rico-dowdle",
+    "name": "Rico Dowdle",
+    "team": "PIT",
+    "position": "RB",
+    "bye": 9,
+    "v31Rank": 75,
+    "positionRank": 29,
+    "tier": 4,
+    "projectionValue": 64.9,
+    "adp": 74.9,
+    "adpSd": 7.5,
+    "upside": 65.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "carnell-tate",
+    "name": "Carnell Tate",
+    "team": "TEN",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 76,
+    "positionRank": 37,
+    "tier": 4,
+    "projectionValue": 64.7,
+    "adp": 75.5,
+    "adpSd": 9.5,
+    "upside": 55.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kyle-pitts-sr",
+    "name": "Kyle Pitts Sr.",
+    "team": "ATL",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 77,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 64.6,
+    "adp": 75.9,
+    "adpSd": 9.2,
+    "upside": 88,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "michael-wilson",
+    "name": "Michael Wilson",
+    "team": "ARI",
+    "position": "WR",
+    "bye": 14,
+    "v31Rank": 78,
+    "positionRank": 38,
+    "tier": 4,
+    "projectionValue": 64.4,
+    "adp": 76.3,
+    "adpSd": 8,
+    "upside": 54.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "matthew-stafford",
+    "name": "Matthew Stafford",
+    "team": "LAR",
+    "position": "QB",
+    "bye": 11,
+    "v31Rank": 79,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 64.2,
+    "adp": 77.2,
+    "adpSd": 11.5,
+    "upside": 88.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chuba-hubbard",
+    "name": "Chuba Hubbard",
+    "team": "CAR",
+    "position": "RB",
+    "bye": 5,
+    "v31Rank": 80,
+    "positionRank": 30,
+    "tier": 4,
+    "projectionValue": 64,
+    "adp": 78.5,
+    "adpSd": 9.5,
+    "upside": 64,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "harold-fannin-jr",
+    "name": "Harold Fannin Jr.",
+    "team": "CLE",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 81,
+    "positionRank": 6,
+    "tier": 2,
+    "projectionValue": 63.9,
+    "adp": 78.6,
+    "adpSd": 7.4,
+    "upside": 86.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jadarian-price",
+    "name": "Jadarian Price",
+    "team": "SEA",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 82,
+    "positionRank": 31,
+    "tier": 4,
+    "projectionValue": 63.7,
+    "adp": 79.1,
+    "adpSd": 11.2,
+    "upside": 62.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chris-godwin-jr",
+    "name": "Chris Godwin Jr.",
+    "team": "TB",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 84,
+    "positionRank": 39,
+    "tier": 4,
+    "projectionValue": 63.4,
+    "adp": 80.4,
+    "adpSd": 8.2,
+    "upside": 53.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "seattle-defense",
+    "name": "Seattle Defense",
+    "team": "SEA",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 85,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 63.2,
+    "adp": 82.9,
+    "adpSd": 8.4,
+    "upside": 92.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "josh-downs",
+    "name": "Josh Downs",
+    "team": "IND",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 86,
+    "positionRank": 40,
+    "tier": 4,
+    "projectionValue": 63,
+    "adp": 83.9,
+    "adpSd": 8.4,
+    "upside": 52,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "wan-dale-robinson",
+    "name": "Wan'Dale Robinson",
+    "team": "TEN",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 87,
+    "positionRank": 41,
+    "tier": 4,
+    "projectionValue": 62.9,
+    "adp": 86,
+    "adpSd": 8.3,
+    "upside": 50.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rj-harvey",
+    "name": "RJ Harvey",
+    "team": "DEN",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 88,
+    "positionRank": 32,
+    "tier": 4,
+    "projectionValue": 62.7,
+    "adp": 86,
+    "adpSd": 11.7,
+    "upside": 61.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brock-purdy",
+    "name": "Brock Purdy",
+    "team": "SF",
+    "position": "QB",
+    "bye": 8,
+    "v31Rank": 89,
+    "positionRank": 9,
+    "tier": 3,
+    "projectionValue": 62.6,
+    "adp": 88.4,
+    "adpSd": 12.5,
+    "upside": 86.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "denver-defense",
+    "name": "Denver Defense",
+    "team": "DEN",
+    "position": "DST",
+    "bye": 10,
+    "v31Rank": 90,
+    "positionRank": 2,
+    "tier": 1,
+    "projectionValue": 62.4,
+    "adp": 88.4,
+    "adpSd": 7.8,
+    "upside": 91.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jakobi-meyers",
+    "name": "Jakobi Meyers",
+    "team": "JAX",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 91,
+    "positionRank": 42,
+    "tier": 4,
+    "projectionValue": 62.3,
+    "adp": 88.5,
+    "adpSd": 7.5,
+    "upside": 49.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "caleb-williams",
+    "name": "Caleb Williams",
+    "team": "CHI",
+    "position": "QB",
+    "bye": 10,
+    "v31Rank": 92,
+    "positionRank": 10,
+    "tier": 3,
+    "projectionValue": 62.1,
+    "adp": 89.3,
+    "adpSd": 12.3,
+    "upside": 85,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kenny-gainwell",
+    "name": "Kenny Gainwell",
+    "team": "TB",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 93,
+    "positionRank": 33,
+    "tier": 4,
+    "projectionValue": 62,
+    "adp": 91,
+    "adpSd": 10.4,
+    "upside": 60.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "stefon-diggs",
+    "name": "Stefon Diggs",
+    "team": "WAS",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 94,
+    "positionRank": 43,
+    "tier": 4,
+    "projectionValue": 61.8,
+    "adp": 91.2,
+    "adpSd": 8.9,
+    "upside": 48.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "j-k-dobbins",
+    "name": "J.K. Dobbins",
+    "team": "DEN",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 95,
+    "positionRank": 34,
+    "tier": 4,
+    "projectionValue": 61.7,
+    "adp": 91.5,
+    "adpSd": 11.6,
+    "upside": 59.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "trevor-lawrence",
+    "name": "Trevor Lawrence",
+    "team": "JAX",
+    "position": "QB",
+    "bye": 7,
+    "v31Rank": 96,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 61.5,
+    "adp": 92.2,
+    "adpSd": 12.4,
+    "upside": 83.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jayden-reed",
+    "name": "Jayden Reed",
+    "team": "GB",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 97,
+    "positionRank": 44,
+    "tier": 4,
+    "projectionValue": 61.4,
+    "adp": 94.3,
+    "adpSd": 9.1,
+    "upside": 47.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "quentin-johnston",
+    "name": "Quentin Johnston",
+    "team": "LAC",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 98,
+    "positionRank": 45,
+    "tier": 4,
+    "projectionValue": 61.2,
+    "adp": 94.7,
+    "adpSd": 9.1,
+    "upside": 46,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "sam-laporta",
+    "name": "Sam LaPorta",
+    "team": "DET",
+    "position": "TE",
+    "bye": 6,
+    "v31Rank": 99,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 61.1,
+    "adp": 96,
+    "adpSd": 20.9,
+    "upside": 85.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "keon-coleman",
+    "name": "Keon Coleman",
+    "team": "BUF",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 100,
+    "positionRank": 46,
+    "tier": 4,
+    "projectionValue": 61,
+    "adp": 96.2,
+    "adpSd": 47.7,
+    "upside": 44.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "houston-defense",
+    "name": "Houston Defense",
+    "team": "HOU",
+    "position": "DST",
+    "bye": 8,
+    "v31Rank": 101,
+    "positionRank": 3,
+    "tier": 1,
+    "projectionValue": 60.8,
+    "adp": 97.3,
+    "adpSd": 9.7,
+    "upside": 94,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jordan-addison",
+    "name": "Jordan Addison",
+    "team": "MIN",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 102,
+    "positionRank": 47,
+    "tier": 4,
+    "projectionValue": 60.7,
+    "adp": 97.8,
+    "adpSd": 8.8,
+    "upside": 47.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jared-goff",
+    "name": "Jared Goff",
+    "team": "DET",
+    "position": "QB",
+    "bye": 6,
+    "v31Rank": 103,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 60.5,
+    "adp": 99.7,
+    "adpSd": 13.3,
+    "upside": 86.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "khalil-shakir",
+    "name": "Khalil Shakir",
+    "team": "BUF",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 104,
+    "positionRank": 48,
+    "tier": 4,
+    "projectionValue": 60.4,
+    "adp": 100.7,
+    "adpSd": 8.8,
+    "upside": 46.400000000000006,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "aaron-jones-sr",
+    "name": "Aaron Jones Sr.",
+    "team": "MIN",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 105,
+    "positionRank": 35,
+    "tier": 4,
+    "projectionValue": 60.3,
+    "adp": 101.6,
+    "adpSd": 12.7,
+    "upside": 62,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jonathon-brooks",
+    "name": "Jonathon Brooks",
+    "team": "CAR",
+    "position": "RB",
+    "bye": 5,
+    "v31Rank": 106,
+    "positionRank": 36,
+    "tier": 4,
+    "projectionValue": 60.1,
+    "adp": 101.8,
+    "adpSd": 14.6,
+    "upside": 60.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "patrick-mahomes",
+    "name": "Patrick Mahomes",
+    "team": "KC",
+    "position": "QB",
+    "bye": 5,
+    "v31Rank": 107,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 60,
+    "adp": 101.9,
+    "adpSd": 12,
+    "upside": 85.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tucker-kraft",
+    "name": "Tucker Kraft",
+    "team": "GB",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 108,
+    "positionRank": 8,
+    "tier": 2,
+    "projectionValue": 59.9,
+    "adp": 102,
+    "adpSd": 20.3,
+    "upside": 88.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dallas-goedert",
+    "name": "Dallas Goedert",
+    "team": "PHI",
+    "position": "TE",
+    "bye": 10,
+    "v31Rank": 109,
+    "positionRank": 9,
+    "tier": 3,
+    "projectionValue": 59.8,
+    "adp": 105.3,
+    "adpSd": 21.8,
+    "upside": 87.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "matthew-golden",
+    "name": "Matthew Golden",
+    "team": "GB",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 111,
+    "positionRank": 49,
+    "tier": 4,
+    "projectionValue": 59.5,
+    "adp": 105.9,
+    "adpSd": 8.8,
+    "upside": 45.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "xavier-worthy",
+    "name": "Xavier Worthy",
+    "team": "KC",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 112,
+    "positionRank": 50,
+    "tier": 4,
+    "projectionValue": 59.4,
+    "adp": 106.3,
+    "adpSd": 8.3,
+    "upside": 44,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "minnesota-defense",
+    "name": "Minnesota Defense",
+    "team": "MIN",
+    "position": "DST",
+    "bye": 6,
+    "v31Rank": 113,
+    "positionRank": 4,
+    "tier": 2,
+    "projectionValue": 59.3,
+    "adp": 108.2,
+    "adpSd": 9.3,
+    "upside": 93.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "la-rams-defense",
+    "name": "LA Rams Defense",
+    "team": "LAR",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 114,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 59.1,
+    "adp": 108.9,
+    "adpSd": 10.5,
+    "upside": 92,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "travis-kelce",
+    "name": "Travis Kelce",
+    "team": "KC",
+    "position": "TE",
+    "bye": 5,
+    "v31Rank": 115,
+    "positionRank": 10,
+    "tier": 3,
+    "projectionValue": 59,
+    "adp": 109,
+    "adpSd": 21.1,
+    "upside": 86,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rachaad-white",
+    "name": "Rachaad White",
+    "team": "WAS",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 116,
+    "positionRank": 37,
+    "tier": 4,
+    "projectionValue": 58.9,
+    "adp": 109.1,
+    "adpSd": 13.1,
+    "upside": 59.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kyle-monangai",
+    "name": "Kyle Monangai",
+    "team": "CHI",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 117,
+    "positionRank": 38,
+    "tier": 4,
+    "projectionValue": 58.8,
+    "adp": 110.8,
+    "adpSd": 14.1,
+    "upside": 58.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "deebo-samuel-sr",
+    "name": "Deebo Samuel Sr.",
+    "team": "SF",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 118,
+    "positionRank": 51,
+    "tier": 5,
+    "projectionValue": 58.6,
+    "adp": 112.4,
+    "adpSd": 9.5,
+    "upside": 42.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "bo-nix",
+    "name": "Bo Nix",
+    "team": "DEN",
+    "position": "QB",
+    "bye": 10,
+    "v31Rank": 119,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 58.5,
+    "adp": 112.7,
+    "adpSd": 13.8,
+    "upside": 83,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "romeo-doubs",
+    "name": "Romeo Doubs",
+    "team": "NE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 120,
+    "positionRank": 52,
+    "tier": 5,
+    "projectionValue": 58.4,
+    "adp": 113.7,
+    "adpSd": 9.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "makai-lemon",
+    "name": "Makai Lemon",
+    "team": "PHI",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 121,
+    "positionRank": 53,
+    "tier": 5,
+    "projectionValue": 58.3,
+    "adp": 115.9,
+    "adpSd": 10.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jacory-croskey-merritt",
+    "name": "Jacory Croskey-Merritt",
+    "team": "WAS",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 122,
+    "positionRank": 39,
+    "tier": 4,
+    "projectionValue": 58.2,
+    "adp": 117.3,
+    "adpSd": 15.2,
+    "upside": 57.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jaxson-dart",
+    "name": "Jaxson Dart",
+    "team": "NYG",
+    "position": "QB",
+    "bye": 8,
+    "v31Rank": 123,
+    "positionRank": 16,
+    "tier": 4,
+    "projectionValue": 58.1,
+    "adp": 117.8,
+    "adpSd": 12.4,
+    "upside": 81.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "george-kittle",
+    "name": "George Kittle",
+    "team": "SF",
+    "position": "TE",
+    "bye": 8,
+    "v31Rank": 124,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 57.9,
+    "adp": 117.9,
+    "adpSd": 19.3,
+    "upside": 84.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jordan-mason",
+    "name": "Jordan Mason",
+    "team": "MIN",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 125,
+    "positionRank": 40,
+    "tier": 4,
+    "projectionValue": 57.8,
+    "adp": 119.3,
+    "adpSd": 16.3,
+    "upside": 56,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jordyn-tyson",
+    "name": "Jordyn Tyson",
+    "team": "NO",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 126,
+    "positionRank": 54,
+    "tier": 5,
+    "projectionValue": 57.7,
+    "adp": 120.1,
+    "adpSd": 25,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "blake-corum",
+    "name": "Blake Corum",
+    "team": "LAR",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 127,
+    "positionRank": 41,
+    "tier": 4,
+    "projectionValue": 57.6,
+    "adp": 120.2,
+    "adpSd": 18.6,
+    "upside": 54.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kc-concepcion",
+    "name": "KC Concepcion",
+    "team": "CLE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 128,
+    "positionRank": 55,
+    "tier": 5,
+    "projectionValue": 57.5,
+    "adp": 120.9,
+    "adpSd": 10.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jalen-coker",
+    "name": "Jalen Coker",
+    "team": "CAR",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 129,
+    "positionRank": 56,
+    "tier": 5,
+    "projectionValue": 57.4,
+    "adp": 121.1,
+    "adpSd": 9.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jerry-jeudy",
+    "name": "Jerry Jeudy",
+    "team": "CLE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 130,
+    "positionRank": 57,
+    "tier": 5,
+    "projectionValue": 57.3,
+    "adp": 126.4,
+    "adpSd": 13.8,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "new-england-defense",
+    "name": "New England Defense",
+    "team": "NE",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 131,
+    "positionRank": 6,
+    "tier": 2,
+    "projectionValue": 57.2,
+    "adp": 127.8,
+    "adpSd": 14.5,
+    "upside": 90.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rashid-shaheed",
+    "name": "Rashid Shaheed",
+    "team": "SEA",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 132,
+    "positionRank": 58,
+    "tier": 5,
+    "projectionValue": 57.1,
+    "adp": 128.5,
+    "adpSd": 12.3,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "mark-andrews",
+    "name": "Mark Andrews",
+    "team": "BAL",
+    "position": "TE",
+    "bye": 13,
+    "v31Rank": 133,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 57,
+    "adp": 128.8,
+    "adpSd": 18.3,
+    "upside": 83.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "detroit-defense",
+    "name": "Detroit Defense",
+    "team": "DET",
+    "position": "DST",
+    "bye": 6,
+    "v31Rank": 134,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 56.9,
+    "adp": 128.9,
+    "adpSd": 14.7,
+    "upside": 89.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "baker-mayfield",
+    "name": "Baker Mayfield",
+    "team": "TB",
+    "position": "QB",
+    "bye": 10,
+    "v31Rank": 135,
+    "positionRank": 17,
+    "tier": 4,
+    "projectionValue": 56.7,
+    "adp": 129.3,
+    "adpSd": 10.2,
+    "upside": 80.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jayden-higgins",
+    "name": "Jayden Higgins",
+    "team": "HOU",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 136,
+    "positionRank": 59,
+    "tier": 5,
+    "projectionValue": 56.6,
+    "adp": 129.8,
+    "adpSd": 10,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brandon-aubrey",
+    "name": "Brandon Aubrey",
+    "team": "DAL",
+    "position": "K",
+    "bye": 14,
+    "v31Rank": 137,
+    "positionRank": 1,
+    "tier": 1,
+    "projectionValue": 56.5,
+    "adp": 130,
+    "adpSd": 21.2,
+    "upside": 94,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "keenan-allen",
+    "name": "Keenan Allen",
+    "team": "IND",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 138,
+    "positionRank": 60,
+    "tier": 5,
+    "projectionValue": 56.4,
+    "adp": 130.1,
+    "adpSd": 11.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyjae-spears",
+    "name": "Tyjae Spears",
+    "team": "TEN",
+    "position": "RB",
+    "bye": 9,
+    "v31Rank": 139,
+    "positionRank": 42,
+    "tier": 4,
+    "projectionValue": 56.3,
+    "adp": 131.5,
+    "adpSd": 13.9,
+    "upside": 53.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tre-tucker",
+    "name": "Tre Tucker",
+    "team": "LV",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 140,
+    "positionRank": 61,
+    "tier": 5,
+    "projectionValue": 56.2,
+    "adp": 132.2,
+    "adpSd": 8.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "pittsburgh-defense",
+    "name": "Pittsburgh Defense",
+    "team": "PIT",
+    "position": "DST",
+    "bye": 9,
+    "v31Rank": 141,
+    "positionRank": 8,
+    "tier": 2,
+    "projectionValue": 56.1,
+    "adp": 132.4,
+    "adpSd": 14.9,
+    "upside": 88.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kyler-murray",
+    "name": "Kyler Murray",
+    "team": "MIN",
+    "position": "QB",
+    "bye": 6,
+    "v31Rank": 142,
+    "positionRank": 18,
+    "tier": 4,
+    "projectionValue": 56,
+    "adp": 133.3,
+    "adpSd": 13,
+    "upside": 79.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "theo-wease-jr",
+    "name": "Theo Wease Jr.",
+    "team": "MIA",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 143,
+    "positionRank": 62,
+    "tier": 5,
+    "projectionValue": 55.9,
+    "adp": 133.4,
+    "adpSd": 6.3,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jake-ferguson",
+    "name": "Jake Ferguson",
+    "team": "DAL",
+    "position": "TE",
+    "bye": 14,
+    "v31Rank": 144,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 55.8,
+    "adp": 133.6,
+    "adpSd": 17.3,
+    "upside": 82.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyler-shough",
+    "name": "Tyler Shough",
+    "team": "NO",
+    "position": "QB",
+    "bye": 8,
+    "v31Rank": 145,
+    "positionRank": 19,
+    "tier": 4,
+    "projectionValue": 55.7,
+    "adp": 134.6,
+    "adpSd": 13,
+    "upside": 78.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "zach-charbonnet",
+    "name": "Zach Charbonnet",
+    "team": "SEA",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 146,
+    "positionRank": 43,
+    "tier": 5,
+    "projectionValue": 55.6,
+    "adp": 135.7,
+    "adpSd": 15.8,
+    "upside": 52.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "david-njoku",
+    "name": "David Njoku",
+    "team": "LAC",
+    "position": "TE",
+    "bye": 7,
+    "v31Rank": 147,
+    "positionRank": 14,
+    "tier": 3,
+    "projectionValue": 55.5,
+    "adp": 136,
+    "adpSd": 28.9,
+    "upside": 81.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jalen-mcmillan",
+    "name": "Jalen McMillan",
+    "team": "TB",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 148,
+    "positionRank": 63,
+    "tier": 5,
+    "projectionValue": 55.4,
+    "adp": 136.4,
+    "adpSd": 10.8,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "isaiah-likely",
+    "name": "Isaiah Likely",
+    "team": "NYG",
+    "position": "TE",
+    "bye": 8,
+    "v31Rank": 149,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 55.3,
+    "adp": 136.7,
+    "adpSd": 18.2,
+    "upside": 80,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jason-myers",
+    "name": "Jason Myers",
+    "team": "SEA",
+    "position": "K",
+    "bye": 11,
+    "v31Rank": 150,
+    "positionRank": 2,
+    "tier": 1,
+    "projectionValue": 55.3,
+    "adp": 138.3,
+    "adpSd": 19.1,
+    "upside": 94,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "de-zhaun-stribling",
+    "name": "De'Zhaun Stribling",
+    "team": "SF",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 151,
+    "positionRank": 64,
+    "tier": 5,
+    "projectionValue": 55.2,
+    "adp": 138.8,
+    "adpSd": 18.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "philadelphia-defense",
+    "name": "Philadelphia Defense",
+    "team": "PHI",
+    "position": "DST",
+    "bye": 10,
+    "v31Rank": 152,
+    "positionRank": 9,
+    "tier": 3,
+    "projectionValue": 55.1,
+    "adp": 139.1,
+    "adpSd": 16.5,
+    "upside": 87.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "denzel-boston",
+    "name": "Denzel Boston",
+    "team": "CLE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 153,
+    "positionRank": 65,
+    "tier": 5,
+    "projectionValue": 55,
+    "adp": 140.2,
+    "adpSd": 14.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "juwan-johnson",
+    "name": "Juwan Johnson",
+    "team": "NO",
+    "position": "TE",
+    "bye": 8,
+    "v31Rank": 154,
+    "positionRank": 16,
+    "tier": 4,
+    "projectionValue": 54.9,
+    "adp": 141,
+    "adpSd": 23.3,
+    "upside": 78.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "sam-darnold",
+    "name": "Sam Darnold",
+    "team": "SEA",
+    "position": "QB",
+    "bye": 11,
+    "v31Rank": 155,
+    "positionRank": 20,
+    "tier": 4,
+    "projectionValue": 54.8,
+    "adp": 141.4,
+    "adpSd": 14.3,
+    "upside": 77,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ka-imi-fairbairn",
+    "name": "Ka'imi Fairbairn",
+    "team": "HOU",
+    "position": "K",
+    "bye": 8,
+    "v31Rank": 156,
+    "positionRank": 3,
+    "tier": 1,
+    "projectionValue": 54.7,
+    "adp": 142.2,
+    "adpSd": 17.7,
+    "upside": 94,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "la-chargers-defense",
+    "name": "LA Chargers Defense",
+    "team": "LAC",
+    "position": "DST",
+    "bye": 7,
+    "v31Rank": 157,
+    "positionRank": 10,
+    "tier": 3,
+    "projectionValue": 54.6,
+    "adp": 142.6,
+    "adpSd": 14.5,
+    "upside": 86,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "woody-marks",
+    "name": "Woody Marks",
+    "team": "HOU",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 158,
+    "positionRank": 44,
+    "tier": 5,
+    "projectionValue": 54.5,
+    "adp": 142.9,
+    "adpSd": 15.2,
+    "upside": 51.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cameron-dicker",
+    "name": "Cameron Dicker",
+    "team": "LAC",
+    "position": "K",
+    "bye": 7,
+    "v31Rank": 159,
+    "positionRank": 4,
+    "tier": 2,
+    "projectionValue": 54.4,
+    "adp": 142.9,
+    "adpSd": 17.1,
+    "upside": 93.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "alvin-kamara",
+    "name": "Alvin Kamara",
+    "team": "NO",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 160,
+    "positionRank": 45,
+    "tier": 5,
+    "projectionValue": 54.3,
+    "adp": 143.1,
+    "adpSd": 23.5,
+    "upside": 50,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jordan-james",
+    "name": "Jordan James",
+    "team": "SF",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 161,
+    "positionRank": 46,
+    "tier": 5,
+    "projectionValue": 54.2,
+    "adp": 144.2,
+    "adpSd": 18.7,
+    "upside": 48.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "calvin-ridley",
+    "name": "Calvin Ridley",
+    "team": "TEN",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 162,
+    "positionRank": 66,
+    "tier": 5,
+    "projectionValue": 54.2,
+    "adp": 144.2,
+    "adpSd": 11.3,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "emari-demercado",
+    "name": "Emari Demercado",
+    "team": "KC",
+    "position": "RB",
+    "bye": 5,
+    "v31Rank": 163,
+    "positionRank": 47,
+    "tier": 5,
+    "projectionValue": 54.1,
+    "adp": 144.4,
+    "adpSd": 11.9,
+    "upside": 47.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jordan-love",
+    "name": "Jordan Love",
+    "team": "GB",
+    "position": "QB",
+    "bye": 11,
+    "v31Rank": 164,
+    "positionRank": 21,
+    "tier": 4,
+    "projectionValue": 54,
+    "adp": 146.3,
+    "adpSd": 13.2,
+    "upside": 75.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jake-bates",
+    "name": "Jake Bates",
+    "team": "DET",
+    "position": "K",
+    "bye": 6,
+    "v31Rank": 165,
+    "positionRank": 5,
+    "tier": 2,
+    "projectionValue": 53.9,
+    "adp": 146.8,
+    "adpSd": 19.4,
+    "upside": 92,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "oronde-gadsden",
+    "name": "Oronde Gadsden",
+    "team": "LAC",
+    "position": "TE",
+    "bye": 7,
+    "v31Rank": 166,
+    "positionRank": 17,
+    "tier": 4,
+    "projectionValue": 53.8,
+    "adp": 148.3,
+    "adpSd": 27.4,
+    "upside": 77.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "malik-washington",
+    "name": "Malik Washington",
+    "team": "MIA",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 167,
+    "positionRank": 67,
+    "tier": 5,
+    "projectionValue": 53.7,
+    "adp": 148.4,
+    "adpSd": 15.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jauan-jennings",
+    "name": "Jauan Jennings",
+    "team": "MIN",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 168,
+    "positionRank": 68,
+    "tier": 5,
+    "projectionValue": 53.6,
+    "adp": 148.9,
+    "adpSd": 8,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "harrison-mevis",
+    "name": "Harrison Mevis",
+    "team": "LAR",
+    "position": "K",
+    "bye": 11,
+    "v31Rank": 169,
+    "positionRank": 6,
+    "tier": 2,
+    "projectionValue": 53.5,
+    "adp": 149.5,
+    "adpSd": 16.7,
+    "upside": 90.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "will-levis",
+    "name": "Will Levis",
+    "team": "TEN",
+    "position": "QB",
+    "bye": 9,
+    "v31Rank": 170,
+    "positionRank": 22,
+    "tier": 4,
+    "projectionValue": 53.5,
+    "adp": 149.6,
+    "adpSd": 12.5,
+    "upside": 74.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "rashod-bateman",
+    "name": "Rashod Bateman",
+    "team": "BAL",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 171,
+    "positionRank": 69,
+    "tier": 5,
+    "projectionValue": 53.4,
+    "adp": 149.6,
+    "adpSd": 13.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dalton-kincaid",
+    "name": "Dalton Kincaid",
+    "team": "BUF",
+    "position": "TE",
+    "bye": 7,
+    "v31Rank": 172,
+    "positionRank": 18,
+    "tier": 4,
+    "projectionValue": 53.3,
+    "adp": 149.8,
+    "adpSd": 20.8,
+    "upside": 76.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "joey-slye",
+    "name": "Joey Slye",
+    "team": "TEN",
+    "position": "K",
+    "bye": 9,
+    "v31Rank": 173,
+    "positionRank": 7,
+    "tier": 2,
+    "projectionValue": 53.2,
+    "adp": 150.5,
+    "adpSd": 8.7,
+    "upside": 89.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyrone-tracy-jr",
+    "name": "Tyrone Tracy Jr.",
+    "team": "NYG",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 174,
+    "positionRank": 48,
+    "tier": 5,
+    "projectionValue": 53.1,
+    "adp": 151.1,
+    "adpSd": 17.4,
+    "upside": 46.400000000000006,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cyrus-allen",
+    "name": "Cyrus Allen",
+    "team": "KC",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 175,
+    "positionRank": 70,
+    "tier": 5,
+    "projectionValue": 53,
+    "adp": 151.4,
+    "adpSd": 21.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cooper-kupp",
+    "name": "Cooper Kupp",
+    "team": "SEA",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 176,
+    "positionRank": 71,
+    "tier": 5,
+    "projectionValue": 53,
+    "adp": 151.5,
+    "adpSd": 17.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "trey-smack",
+    "name": "Trey Smack",
+    "team": "GB",
+    "position": "K",
+    "bye": 11,
+    "v31Rank": 177,
+    "positionRank": 8,
+    "tier": 2,
+    "projectionValue": 52.9,
+    "adp": 152.6,
+    "adpSd": 14.8,
+    "upside": 88.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cam-little",
+    "name": "Cam Little",
+    "team": "JAX",
+    "position": "K",
+    "bye": 7,
+    "v31Rank": 178,
+    "positionRank": 9,
+    "tier": 3,
+    "projectionValue": 52.8,
+    "adp": 153.1,
+    "adpSd": 17.8,
+    "upside": 87.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jalen-nailor",
+    "name": "Jalen Nailor",
+    "team": "LV",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 179,
+    "positionRank": 72,
+    "tier": 5,
+    "projectionValue": 52.7,
+    "adp": 153.8,
+    "adpSd": 15.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "san-francisco-defense",
+    "name": "San Francisco Defense",
+    "team": "SF",
+    "position": "DST",
+    "bye": 8,
+    "v31Rank": 180,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 52.6,
+    "adp": 153.9,
+    "adpSd": 32.3,
+    "upside": 84.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyler-loop",
+    "name": "Tyler Loop",
+    "team": "BAL",
+    "position": "K",
+    "bye": 13,
+    "v31Rank": 181,
+    "positionRank": 10,
+    "tier": 3,
+    "projectionValue": 52.6,
+    "adp": 154.1,
+    "adpSd": 14.9,
+    "upside": 86,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chase-mclaughlin",
+    "name": "Chase McLaughlin",
+    "team": "TB",
+    "position": "K",
+    "bye": 10,
+    "v31Rank": 182,
+    "positionRank": 11,
+    "tier": 3,
+    "projectionValue": 52.5,
+    "adp": 154.4,
+    "adpSd": 15.5,
+    "upside": 84.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chig-okonkwo",
+    "name": "Chig Okonkwo",
+    "team": "WAS",
+    "position": "TE",
+    "bye": 7,
+    "v31Rank": 183,
+    "positionRank": 19,
+    "tier": 4,
+    "projectionValue": 52.4,
+    "adp": 154.6,
+    "adpSd": 18.3,
+    "upside": 75.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyler-allgeier",
+    "name": "Tyler Allgeier",
+    "team": "ARI",
+    "position": "RB",
+    "bye": 14,
+    "v31Rank": 184,
+    "positionRank": 49,
+    "tier": 5,
+    "projectionValue": 52.3,
+    "adp": 154.8,
+    "adpSd": 22.4,
+    "upside": 45.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "green-bay-defense",
+    "name": "Green Bay Defense",
+    "team": "GB",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 185,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 52.3,
+    "adp": 154.8,
+    "adpSd": 16.7,
+    "upside": 83.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chimere-dike",
+    "name": "Chimere Dike",
+    "team": "TEN",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 186,
+    "positionRank": 73,
+    "tier": 6,
+    "projectionValue": 52.2,
+    "adp": 155.2,
+    "adpSd": 11.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chris-rodriguez-jr",
+    "name": "Chris Rodriguez Jr.",
+    "team": "JAX",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 187,
+    "positionRank": 50,
+    "tier": 5,
+    "projectionValue": 52.1,
+    "adp": 155.7,
+    "adpSd": 22.3,
+    "upside": 44,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "isiah-pacheco",
+    "name": "Isiah Pacheco",
+    "team": "DET",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 188,
+    "positionRank": 51,
+    "tier": 5,
+    "projectionValue": 52,
+    "adp": 155.9,
+    "adpSd": 18.7,
+    "upside": 42.800000000000004,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tyler-bass",
+    "name": "Tyler Bass",
+    "team": "BUF",
+    "position": "K",
+    "bye": 7,
+    "v31Rank": 189,
+    "positionRank": 12,
+    "tier": 3,
+    "projectionValue": 51.9,
+    "adp": 156.1,
+    "adpSd": 15.6,
+    "upside": 83.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jacksonville-defense",
+    "name": "Jacksonville Defense",
+    "team": "JAX",
+    "position": "DST",
+    "bye": 7,
+    "v31Rank": 190,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 51.9,
+    "adp": 156.6,
+    "adpSd": 15.4,
+    "upside": 82.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "hunter-henry",
+    "name": "Hunter Henry",
+    "team": "NE",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 191,
+    "positionRank": 20,
+    "tier": 4,
+    "projectionValue": 51.8,
+    "adp": 156.8,
+    "adpSd": 22.7,
+    "upside": 74,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brandon-aiyuk",
+    "name": "Brandon Aiyuk",
+    "team": "SF",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 192,
+    "positionRank": 74,
+    "tier": 6,
+    "projectionValue": 51.7,
+    "adp": 156.8,
+    "adpSd": 16.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jonah-coleman",
+    "name": "Jonah Coleman",
+    "team": "DEN",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 193,
+    "positionRank": 52,
+    "tier": 5,
+    "projectionValue": 51.6,
+    "adp": 156.8,
+    "adpSd": 17.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dylan-sampson",
+    "name": "Dylan Sampson",
+    "team": "CLE",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 194,
+    "positionRank": 53,
+    "tier": 5,
+    "projectionValue": 51.6,
+    "adp": 157.1,
+    "adpSd": 17,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chris-boswell",
+    "name": "Chris Boswell",
+    "team": "PIT",
+    "position": "K",
+    "bye": 9,
+    "v31Rank": 195,
+    "positionRank": 13,
+    "tier": 3,
+    "projectionValue": 51.5,
+    "adp": 157.2,
+    "adpSd": 15.8,
+    "upside": 82.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ja-kobi-lane",
+    "name": "Ja'Kobi Lane",
+    "team": "BAL",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 196,
+    "positionRank": 75,
+    "tier": 6,
+    "projectionValue": 51.4,
+    "adp": 157.2,
+    "adpSd": 18.8,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tank-dell",
+    "name": "Tank Dell",
+    "team": "HOU",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 197,
+    "positionRank": 76,
+    "tier": 6,
+    "projectionValue": 51.3,
+    "adp": 157.2,
+    "adpSd": 16.2,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "braelon-allen",
+    "name": "Braelon Allen",
+    "team": "NYJ",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 198,
+    "positionRank": 54,
+    "tier": 5,
+    "projectionValue": 51.3,
+    "adp": 157.3,
+    "adpSd": 17.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "mike-washington-jr",
+    "name": "Mike Washington Jr.",
+    "team": "LV",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 199,
+    "positionRank": 55,
+    "tier": 5,
+    "projectionValue": 51.2,
+    "adp": 157.3,
+    "adpSd": 18.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "marshawn-lloyd",
+    "name": "MarShawn Lloyd",
+    "team": "GB",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 200,
+    "positionRank": 56,
+    "tier": 5,
+    "projectionValue": 51.1,
+    "adp": 157.8,
+    "adpSd": 22.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ray-davis",
+    "name": "Ray Davis",
+    "team": "BUF",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 201,
+    "positionRank": 57,
+    "tier": 5,
+    "projectionValue": 51.1,
+    "adp": 158.3,
+    "adpSd": 20.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "malachi-fields",
+    "name": "Malachi Fields",
+    "team": "NYG",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 202,
+    "positionRank": 77,
+    "tier": 6,
+    "projectionValue": 51,
+    "adp": 158.6,
+    "adpSd": 28.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "c-j-stroud",
+    "name": "C.J. Stroud",
+    "team": "HOU",
+    "position": "QB",
+    "bye": 8,
+    "v31Rank": 203,
+    "positionRank": 23,
+    "tier": 5,
+    "projectionValue": 50.9,
+    "adp": 158.7,
+    "adpSd": 14.9,
+    "upside": 73.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tank-bigsby",
+    "name": "Tank Bigsby",
+    "team": "PHI",
+    "position": "RB",
+    "bye": 10,
+    "v31Rank": 204,
+    "positionRank": 58,
+    "tier": 5,
+    "projectionValue": 50.8,
+    "adp": 158.7,
+    "adpSd": 21.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ryan-flournoy",
+    "name": "Ryan Flournoy",
+    "team": "DAL",
+    "position": "WR",
+    "bye": 14,
+    "v31Rank": 205,
+    "positionRank": 78,
+    "tier": 6,
+    "projectionValue": 50.8,
+    "adp": 158.7,
+    "adpSd": 27.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "fernando-mendoza",
+    "name": "Fernando Mendoza",
+    "team": "LV",
+    "position": "QB",
+    "bye": 13,
+    "v31Rank": 206,
+    "positionRank": 24,
+    "tier": 5,
+    "projectionValue": 50.7,
+    "adp": 159.1,
+    "adpSd": 26.5,
+    "upside": 72.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "harrison-butker",
+    "name": "Harrison Butker",
+    "team": "KC",
+    "position": "K",
+    "bye": 5,
+    "v31Rank": 207,
+    "positionRank": 14,
+    "tier": 3,
+    "projectionValue": 50.6,
+    "adp": 159.3,
+    "adpSd": 17.4,
+    "upside": 81.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "wil-lutz",
+    "name": "Wil Lutz",
+    "team": "DEN",
+    "position": "K",
+    "bye": 10,
+    "v31Rank": 208,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 50.6,
+    "adp": 159.4,
+    "adpSd": 16.1,
+    "upside": 80,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cleveland-defense",
+    "name": "Cleveland Defense",
+    "team": "CLE",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 209,
+    "positionRank": 14,
+    "tier": 3,
+    "projectionValue": 50.5,
+    "adp": 159.6,
+    "adpSd": 13.5,
+    "upside": 81.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kaelon-black",
+    "name": "Kaelon Black",
+    "team": "SF",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 210,
+    "positionRank": 59,
+    "tier": 6,
+    "projectionValue": 50.4,
+    "adp": 160,
+    "adpSd": 23,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "buffalo-defense",
+    "name": "Buffalo Defense",
+    "team": "BUF",
+    "position": "DST",
+    "bye": 7,
+    "v31Rank": 211,
+    "positionRank": 15,
+    "tier": 3,
+    "projectionValue": 50.4,
+    "adp": 160,
+    "adpSd": 14.8,
+    "upside": 80,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "daniel-jones",
+    "name": "Daniel Jones",
+    "team": "IND",
+    "position": "QB",
+    "bye": 13,
+    "v31Rank": 212,
+    "positionRank": 25,
+    "tier": 5,
+    "projectionValue": 50.3,
+    "adp": 160.1,
+    "adpSd": 14.8,
+    "upside": 71,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "aj-barner",
+    "name": "AJ Barner",
+    "team": "SEA",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 213,
+    "positionRank": 21,
+    "tier": 4,
+    "projectionValue": 50.2,
+    "adp": 160.1,
+    "adpSd": 15.9,
+    "upside": 72.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "james-conner",
+    "name": "James Conner",
+    "team": "ARI",
+    "position": "RB",
+    "bye": 14,
+    "v31Rank": 214,
+    "positionRank": 60,
+    "tier": 6,
+    "projectionValue": 50.2,
+    "adp": 160.3,
+    "adpSd": 22.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "keaton-mitchell",
+    "name": "Keaton Mitchell",
+    "team": "LAC",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 215,
+    "positionRank": 61,
+    "tier": 6,
+    "projectionValue": 50.1,
+    "adp": 160.5,
+    "adpSd": 22.2,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kansas-city-defense",
+    "name": "Kansas City Defense",
+    "team": "KC",
+    "position": "DST",
+    "bye": 5,
+    "v31Rank": 216,
+    "positionRank": 16,
+    "tier": 4,
+    "projectionValue": 50,
+    "adp": 161.3,
+    "adpSd": 25.4,
+    "upside": 78.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "malik-willis",
+    "name": "Malik Willis",
+    "team": "MIA",
+    "position": "QB",
+    "bye": 6,
+    "v31Rank": 217,
+    "positionRank": 26,
+    "tier": 5,
+    "projectionValue": 50,
+    "adp": 161.7,
+    "adpSd": 13,
+    "upside": 69.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "pat-bryant",
+    "name": "Pat Bryant",
+    "team": "DEN",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 218,
+    "positionRank": 79,
+    "tier": 6,
+    "projectionValue": 49.9,
+    "adp": 162.2,
+    "adpSd": 22.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kenyon-sadiq",
+    "name": "Kenyon Sadiq",
+    "team": "NYJ",
+    "position": "TE",
+    "bye": 13,
+    "v31Rank": 219,
+    "positionRank": 22,
+    "tier": 4,
+    "projectionValue": 49.8,
+    "adp": 162.3,
+    "adpSd": 17.2,
+    "upside": 71.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brian-robinson",
+    "name": "Brian Robinson",
+    "team": "ATL",
+    "position": "RB",
+    "bye": 11,
+    "v31Rank": 220,
+    "positionRank": 62,
+    "tier": 6,
+    "projectionValue": 49.8,
+    "adp": 162.4,
+    "adpSd": 27.5,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "adonai-mitchell",
+    "name": "Adonai Mitchell",
+    "team": "NYJ",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 221,
+    "positionRank": 80,
+    "tier": 6,
+    "projectionValue": 49.7,
+    "adp": 162.5,
+    "adpSd": 14,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "will-reichard",
+    "name": "Will Reichard",
+    "team": "MIN",
+    "position": "K",
+    "bye": 6,
+    "v31Rank": 222,
+    "positionRank": 16,
+    "tier": 4,
+    "projectionValue": 49.6,
+    "adp": 162.7,
+    "adpSd": 16.9,
+    "upside": 78.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "blake-grupe",
+    "name": "Blake Grupe",
+    "team": "IND",
+    "position": "K",
+    "bye": 13,
+    "v31Rank": 223,
+    "positionRank": 17,
+    "tier": 4,
+    "projectionValue": 49.6,
+    "adp": 163,
+    "adpSd": 16.1,
+    "upside": 77.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "terrance-ferguson",
+    "name": "Terrance Ferguson",
+    "team": "LAR",
+    "position": "TE",
+    "bye": 11,
+    "v31Rank": 224,
+    "positionRank": 23,
+    "tier": 5,
+    "projectionValue": 49.5,
+    "adp": 163.1,
+    "adpSd": 11.9,
+    "upside": 70.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "emmett-johnson",
+    "name": "Emmett Johnson",
+    "team": "KC",
+    "position": "RB",
+    "bye": 5,
+    "v31Rank": 225,
+    "positionRank": 63,
+    "tier": 6,
+    "projectionValue": 49.4,
+    "adp": 163.3,
+    "adpSd": 11.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "baltimore-defense",
+    "name": "Baltimore Defense",
+    "team": "BAL",
+    "position": "DST",
+    "bye": 13,
+    "v31Rank": 226,
+    "positionRank": 17,
+    "tier": 4,
+    "projectionValue": 49.4,
+    "adp": 163.5,
+    "adpSd": 17.6,
+    "upside": 77.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "brenton-strange",
+    "name": "Brenton Strange",
+    "team": "JAX",
+    "position": "TE",
+    "bye": 7,
+    "v31Rank": 227,
+    "positionRank": 24,
+    "tier": 5,
+    "projectionValue": 49.3,
+    "adp": 163.5,
+    "adpSd": 19.2,
+    "upside": 69.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "najee-harris",
+    "name": "Najee Harris",
+    "team": "NYG",
+    "position": "RB",
+    "bye": 8,
+    "v31Rank": 228,
+    "positionRank": 64,
+    "tier": 6,
+    "projectionValue": 49.2,
+    "adp": 163.6,
+    "adpSd": 17.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dalton-schultz",
+    "name": "Dalton Schultz",
+    "team": "HOU",
+    "position": "TE",
+    "bye": 8,
+    "v31Rank": 229,
+    "positionRank": 25,
+    "tier": 5,
+    "projectionValue": 49.2,
+    "adp": 163.7,
+    "adpSd": 23.9,
+    "upside": 68,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "devaughn-vele",
+    "name": "Devaughn Vele",
+    "team": "NO",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 230,
+    "positionRank": 81,
+    "tier": 6,
+    "projectionValue": 49.1,
+    "adp": 164.6,
+    "adpSd": 23.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "travis-hunter",
+    "name": "Travis Hunter",
+    "team": "JAX",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 231,
+    "positionRank": 82,
+    "tier": 6,
+    "projectionValue": 49,
+    "adp": 164.6,
+    "adpSd": 17.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "aaron-rodgers",
+    "name": "Aaron Rodgers",
+    "team": "PIT",
+    "position": "QB",
+    "bye": 9,
+    "v31Rank": 232,
+    "positionRank": 27,
+    "tier": 5,
+    "projectionValue": 49,
+    "adp": 164.8,
+    "adpSd": 32,
+    "upside": 68.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cairo-santos",
+    "name": "Cairo Santos",
+    "team": "CHI",
+    "position": "K",
+    "bye": 10,
+    "v31Rank": 233,
+    "positionRank": 18,
+    "tier": 4,
+    "projectionValue": 48.9,
+    "adp": 165.6,
+    "adpSd": 16.8,
+    "upside": 76.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "antonio-williams",
+    "name": "Antonio Williams",
+    "team": "WAS",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 234,
+    "positionRank": 83,
+    "tier": 6,
+    "projectionValue": 48.9,
+    "adp": 165.6,
+    "adpSd": 12.2,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jaylin-noel",
+    "name": "Jaylin Noel",
+    "team": "HOU",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 235,
+    "positionRank": 84,
+    "tier": 6,
+    "projectionValue": 48.8,
+    "adp": 165.9,
+    "adpSd": 13.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kayshon-boutte",
+    "name": "Kayshon Boutte",
+    "team": "NE",
+    "position": "WR",
+    "bye": 11,
+    "v31Rank": 236,
+    "positionRank": 85,
+    "tier": 6,
+    "projectionValue": 48.7,
+    "adp": 166.1,
+    "adpSd": 18,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dallas-defense",
+    "name": "Dallas Defense",
+    "team": "DAL",
+    "position": "DST",
+    "bye": 14,
+    "v31Rank": 237,
+    "positionRank": 18,
+    "tier": 4,
+    "projectionValue": 48.7,
+    "adp": 166.2,
+    "adpSd": 22,
+    "upside": 76.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ny-giants-defense",
+    "name": "NY Giants Defense",
+    "team": "NYG",
+    "position": "DST",
+    "bye": 8,
+    "v31Rank": 238,
+    "positionRank": 19,
+    "tier": 4,
+    "projectionValue": 48.6,
+    "adp": 166.5,
+    "adpSd": 23.2,
+    "upside": 75.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "t-j-hockenson",
+    "name": "T.J. Hockenson",
+    "team": "MIN",
+    "position": "TE",
+    "bye": 6,
+    "v31Rank": 239,
+    "positionRank": 26,
+    "tier": 5,
+    "projectionValue": 48.6,
+    "adp": 166.9,
+    "adpSd": 20,
+    "upside": 66.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jacoby-brissett",
+    "name": "Jacoby Brissett",
+    "team": "ARI",
+    "position": "QB",
+    "bye": 14,
+    "v31Rank": 240,
+    "positionRank": 28,
+    "tier": 5,
+    "projectionValue": 48.5,
+    "adp": 167,
+    "adpSd": 22.7,
+    "upside": 67.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "nick-folk",
+    "name": "Nick Folk",
+    "team": "ATL",
+    "position": "K",
+    "bye": 11,
+    "v31Rank": 241,
+    "positionRank": 19,
+    "tier": 4,
+    "projectionValue": 48.4,
+    "adp": 167.1,
+    "adpSd": 32.5,
+    "upside": 75.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "germie-bernard",
+    "name": "Germie Bernard",
+    "team": "PIT",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 242,
+    "positionRank": 86,
+    "tier": 6,
+    "projectionValue": 48.4,
+    "adp": 167.9,
+    "adpSd": 12.5,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "dontayvion-wicks",
+    "name": "Dontayvion Wicks",
+    "team": "PHI",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 243,
+    "positionRank": 87,
+    "tier": 6,
+    "projectionValue": 48.3,
+    "adp": 168.1,
+    "adpSd": 17.6,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "eddy-pi-eiro",
+    "name": "Eddy Piñeiro",
+    "team": "SF",
+    "position": "K",
+    "bye": 8,
+    "v31Rank": 244,
+    "positionRank": 20,
+    "tier": 4,
+    "projectionValue": 48.3,
+    "adp": 168.4,
+    "adpSd": 15.9,
+    "upside": 74,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "evan-mcpherson",
+    "name": "Evan McPherson",
+    "team": "CIN",
+    "position": "K",
+    "bye": 6,
+    "v31Rank": 245,
+    "positionRank": 21,
+    "tier": 4,
+    "projectionValue": 48.2,
+    "adp": 168.6,
+    "adpSd": 15.8,
+    "upside": 72.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "isaac-teslaa",
+    "name": "Isaac TeSlaa",
+    "team": "DET",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 246,
+    "positionRank": 88,
+    "tier": 6,
+    "projectionValue": 48.1,
+    "adp": 168.6,
+    "adpSd": 38,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "jaydon-blue",
+    "name": "Jaydon Blue",
+    "team": "DAL",
+    "position": "RB",
+    "bye": 14,
+    "v31Rank": 247,
+    "positionRank": 65,
+    "tier": 6,
+    "projectionValue": 48.1,
+    "adp": 168.7,
+    "adpSd": 13.7,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "justice-hill",
+    "name": "Justice Hill",
+    "team": "BAL",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 248,
+    "positionRank": 66,
+    "tier": 6,
+    "projectionValue": 48,
+    "adp": 168.8,
+    "adpSd": 14.1,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "samaje-perine",
+    "name": "Samaje Perine",
+    "team": "CIN",
+    "position": "RB",
+    "bye": 6,
+    "v31Rank": 249,
+    "positionRank": 67,
+    "tier": 6,
+    "projectionValue": 48,
+    "adp": 169,
+    "adpSd": 10.3,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "chicago-defense",
+    "name": "Chicago Defense",
+    "team": "CHI",
+    "position": "DST",
+    "bye": 10,
+    "v31Rank": 250,
+    "positionRank": 20,
+    "tier": 4,
+    "projectionValue": 47.9,
+    "adp": 170.1,
+    "adpSd": 19.1,
+    "upside": 74,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "bryce-young",
+    "name": "Bryce Young",
+    "team": "CAR",
+    "position": "QB",
+    "bye": 5,
+    "v31Rank": 251,
+    "positionRank": 29,
+    "tier": 5,
+    "projectionValue": 47.8,
+    "adp": 171,
+    "adpSd": 14.7,
+    "upside": 66.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cam-ward",
+    "name": "Cam Ward",
+    "team": "TEN",
+    "position": "QB",
+    "bye": 9,
+    "v31Rank": 252,
+    "positionRank": 30,
+    "tier": 5,
+    "projectionValue": 47.8,
+    "adp": 171.4,
+    "adpSd": 12.7,
+    "upside": 65,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tennessee-defense",
+    "name": "Tennessee Defense",
+    "team": "TEN",
+    "position": "DST",
+    "bye": 9,
+    "v31Rank": 253,
+    "positionRank": 21,
+    "tier": 4,
+    "projectionValue": 47.7,
+    "adp": 171.9,
+    "adpSd": 10.7,
+    "upside": 72.8,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "andy-borregales",
+    "name": "Andy Borregales",
+    "team": "NE",
+    "position": "K",
+    "bye": 11,
+    "v31Rank": 254,
+    "positionRank": 22,
+    "tier": 4,
+    "projectionValue": 47.7,
+    "adp": 172.1,
+    "adpSd": 20.5,
+    "upside": 71.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "omar-cooper-jr",
+    "name": "Omar Cooper Jr.",
+    "team": "NYJ",
+    "position": "WR",
+    "bye": 13,
+    "v31Rank": 255,
+    "positionRank": 89,
+    "tier": 6,
+    "projectionValue": 47.6,
+    "adp": 172.4,
+    "adpSd": 16.8,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "caleb-douglas",
+    "name": "Caleb Douglas",
+    "team": "MIA",
+    "position": "WR",
+    "bye": 6,
+    "v31Rank": 256,
+    "positionRank": 90,
+    "tier": 6,
+    "projectionValue": 47.6,
+    "adp": 172.5,
+    "adpSd": 23.4,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "kaden-wetjen",
+    "name": "Kaden Wetjen",
+    "team": "PIT",
+    "position": "WR",
+    "bye": 9,
+    "v31Rank": 257,
+    "positionRank": 91,
+    "tier": 6,
+    "projectionValue": 47.5,
+    "adp": 172.5,
+    "adpSd": 3.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "tre-harris",
+    "name": "Tre' Harris",
+    "team": "LAC",
+    "position": "WR",
+    "bye": 7,
+    "v31Rank": 258,
+    "positionRank": 92,
+    "tier": 6,
+    "projectionValue": 47.4,
+    "adp": 172.8,
+    "adpSd": 19.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "new-orleans-defense",
+    "name": "New Orleans Defense",
+    "team": "NO",
+    "position": "DST",
+    "bye": 8,
+    "v31Rank": 259,
+    "positionRank": 22,
+    "tier": 4,
+    "projectionValue": 47.4,
+    "adp": 172.9,
+    "adpSd": 18.2,
+    "upside": 71.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "cincinnati-defense",
+    "name": "Cincinnati Defense",
+    "team": "CIN",
+    "position": "DST",
+    "bye": 6,
+    "v31Rank": 260,
+    "positionRank": 23,
+    "tier": 5,
+    "projectionValue": 47.3,
+    "adp": 173,
+    "adpSd": 36.5,
+    "upside": 70.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "troy-franklin",
+    "name": "Troy Franklin",
+    "team": "DEN",
+    "position": "WR",
+    "bye": 10,
+    "v31Rank": 261,
+    "positionRank": 93,
+    "tier": 6,
+    "projectionValue": 47.3,
+    "adp": 174.6,
+    "adpSd": 20.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "atlanta-defense",
+    "name": "Atlanta Defense",
+    "team": "ATL",
+    "position": "DST",
+    "bye": 11,
+    "v31Rank": 262,
+    "positionRank": 24,
+    "tier": 5,
+    "projectionValue": 47.2,
+    "adp": 176.6,
+    "adpSd": 13.5,
+    "upside": 69.2,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "xavier-legette",
+    "name": "Xavier Legette",
+    "team": "CAR",
+    "position": "WR",
+    "bye": 5,
+    "v31Rank": 263,
+    "positionRank": 94,
+    "tier": 6,
+    "projectionValue": 47.2,
+    "adp": 180.2,
+    "adpSd": 24.5,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "greg-dulcich",
+    "name": "Greg Dulcich",
+    "team": "MIA",
+    "position": "TE",
+    "bye": 6,
+    "v31Rank": 264,
+    "positionRank": 27,
+    "tier": 5,
+    "projectionValue": 47.1,
+    "adp": 181.7,
+    "adpSd": 17.4,
+    "upside": 65.6,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ty-johnson",
+    "name": "Ty Johnson",
+    "team": "BUF",
+    "position": "RB",
+    "bye": 7,
+    "v31Rank": 265,
+    "positionRank": 68,
+    "tier": 6,
+    "projectionValue": 47,
+    "adp": 182.4,
+    "adpSd": 21.9,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "darius-slayton",
+    "name": "Darius Slayton",
+    "team": "NYG",
+    "position": "WR",
+    "bye": 8,
+    "v31Rank": 266,
+    "positionRank": 95,
+    "tier": 6,
+    "projectionValue": 47,
+    "adp": 184.7,
+    "adpSd": 7.5,
+    "upside": 42,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "pat-freiermuth",
+    "name": "Pat Freiermuth",
+    "team": "PIT",
+    "position": "TE",
+    "bye": 9,
+    "v31Rank": 267,
+    "positionRank": 28,
+    "tier": 5,
+    "projectionValue": 46.9,
+    "adp": 186.2,
+    "adpSd": 26.8,
+    "upside": 64.4,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "washington-defense",
+    "name": "Washington Defense",
+    "team": "WAS",
+    "position": "DST",
+    "bye": 7,
+    "v31Rank": 268,
+    "positionRank": 25,
+    "tier": 5,
+    "projectionValue": 46.9,
+    "adp": 191.3,
+    "adpSd": 29.9,
+    "upside": 68,
+    "risk": 30,
+    "status": "ACTIVE",
+    "notes": [
+      "2026 PPR market-baseline fallback"
+    ],
+    "dataSource": "2026 PPR ADP baseline"
+  },
+  {
+    "id": "ashton-jeanty",
+    "name": "Ashton Jeanty",
+    "team": "LV",
+    "position": "RB",
+    "bye": 13,
+    "v31Rank": 999,
+    "positionRank": 999,
+    "tier": 99,
+    "projectionValue": 75,
+    "adp": 15.1,
+    "adpSd": 3.1,
+    "upside": 94,
+    "risk": 90,
+    "status": "HOLD",
+    "notes": [
+      "Acute injury status unclear; do not recommend until refreshed"
+    ],
+    "dataSource": "V3.1 seed + 2026 PPR ADP"
+  }
+]
