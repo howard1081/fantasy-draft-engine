@@ -171,10 +171,8 @@ dialog::backdrop { background: rgb(0 0 0 / 68%); backdrop-filter: blur(5px); }
   .player-heading h2 { font-size: 1.35rem; }
   .reason-chips { margin-left: 0; }
   .hero-footer { align-items: stretch; flex-direction: column; }
-  .hero-actions { width: 100%; }
+  .hero-actions { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); width: 100%; }
   .hero-actions .button { min-width: 0; min-height: 52px; }
-  .hero-actions .draft-button { flex: 2; }
-  .hero-actions .taken-button { flex: 1; }
   .recommendation-row { grid-template-columns: 22px minmax(0, 1fr) 48px; }
   .recommendation-row .row-actions { grid-column: 2 / 4; }
   .recommendation-row .row-actions .button { flex: 1; }
