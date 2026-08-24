@@ -37,7 +37,22 @@
 
       <section id="hero" class="hero card" aria-live="polite"></section>
 
-      <section class="card">
+      <section class="card quick-card" aria-label="Quick taken search">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">QUICK TAKEN</div>
+            <h2>Remove a player fast</h2>
+          </div>
+          <button id="quickClear" class="button ghost" type="button" hidden>Clear</button>
+        </div>
+        <form id="quickForm" autocomplete="off">
+          <input id="quickSearch" type="search" placeholder="Type a name, then tap Taken" autocomplete="off" enterkeyhint="done">
+        </form>
+        <p id="quickHint" class="muted quick-hint">Press return to mark the top match taken.</p>
+        <div id="quickResults" class="player-list quick-results" hidden></div>
+      </section>
+
+      <section id="boardSection" class="card">
         <div class="section-head">
           <div>
             <div class="eyebrow">LIVE BOARD</div>
@@ -47,7 +62,7 @@
         <div id="recommendations" class="recommendations"></div>
       </section>
 
-      <section class="card">
+      <section id="availableSection" class="card">
         <div class="section-head available-head">
           <div>
             <div class="eyebrow">AVAILABLE PLAYERS</div>
@@ -107,6 +122,7 @@
           <option value="10">10</option>
           <option value="12" selected>12</option>
           <option value="14">14</option>
+          <option value="16">16</option>
         </select>
       </label>
       <label>Rounds

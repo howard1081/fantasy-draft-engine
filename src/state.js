@@ -4,7 +4,7 @@ export const STORAGE_KEY = 'fantasy-draft-engine-v1';
 export const STATE_VERSION = 1;
 
 export function normalizeSettings(settings = {}) {
-  const teams = [10, 12, 14].includes(Number(settings.teams)) ? Number(settings.teams) : 12;
+  const teams = [10, 12, 14, 16].includes(Number(settings.teams)) ? Number(settings.teams) : 12;
   const rounds = Math.max(10, Math.min(20, Number(settings.rounds) || 16));
   const mySlot = Math.max(1, Math.min(teams, Number(settings.mySlot) || 1));
   return {

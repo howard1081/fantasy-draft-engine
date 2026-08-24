@@ -396,3 +396,20 @@ export function currentRosterNeeds(counts, settings = DEFAULT_SETTINGS) {
   if (flexCount(counts) < settings.starters.FLEX) needs.push('FLEX ×1');
   return needs;
 }
+
+export function searchAvailable(available, query, limit = 8) {
+  const needle = String(query ?? '').trim().toLowerCase();
+  if (!needle) return [];
+  const relevance = (player) => {
+    const name = player.name.toLowerCase();
+    if (name.startsWith(needle)) return 0;
+    if (name.split(' ').some((part) => part.startsWith(needle))) return 1;
+    return 2;
+  };
+  return available
+    .filter((player) => `${player.name} ${player.team} ${player.position}`
+      .toLowerCase()
+      .includes(needle))
+    .sort((a, b) => relevance(a) - relevance(b) || a.v31Rank - b.v31Rank)
+    .slice(0, limit);
+}

@@ -5,6 +5,7 @@ import {
   nextMyPick,
   recommend,
   roundForPick,
+  searchAvailable,
   teamOnClock,
 } from './engine.js';
 import {
@@ -23,6 +24,8 @@ const elements = Object.fromEntries(
   [
     'pickNumber', 'roundNumber', 'onClock', 'nextPick', 'hero', 'recommendations',
     'positionFilters', 'availableList', 'searchInput', 'roster', 'rosterNeeds',
+    'quickSearch', 'quickForm', 'quickResults', 'quickClear', 'quickHint',
+    'boardSection', 'availableSection',
     'recentPicks', 'undoBtn', 'settingsBtn', 'settingsDialog', 'teamsSelect',
     'roundsInput', 'slotSelect', 'settingsForm', 'myTeamTitle', 'rosterCount',
     'exportBtn', 'importBtn', 'importInput', 'resetBtn', 'dataSnapshot', 'toast',
@@ -62,6 +65,9 @@ function requireSuccessfulResponse(response) {
 function bindEvents() {
   document.addEventListener('click', handleActionClick);
   elements.searchInput.addEventListener('input', renderAvailable);
+  elements.quickSearch.addEventListener('input', renderQuick);
+  elements.quickForm.addEventListener('submit', takeTopQuickMatch);
+  elements.quickClear.addEventListener('click', clearQuickSearch);
   elements.undoBtn.addEventListener('click', () => updateState(undoPick(state), 'Last pick restored'));
   elements.settingsBtn.addEventListener('click', openSettings);
   elements.teamsSelect.addEventListener('change', populateSlots);
@@ -90,6 +96,7 @@ function handleActionClick(event) {
 
   actionLocked = true;
   try {
+    if (actionButton.closest('#quickResults')) elements.quickSearch.value = '';
     updateState(
       applyPick(state, playerId, owner),
       owner === 'ME' ? `${player.name} added to my team` : `${player.name} marked taken`,
@@ -134,6 +141,7 @@ function render() {
   elements.dataSnapshot.textContent = `Data snapshot ${formatDate(metadata.snapshotDate)} · ${metadata.playerCount ?? players.length} players`;
 
   renderHero(recommendations[0], draftComplete);
+  renderQuick();
   renderRecommendations(recommendations.slice(1));
   renderAvailable();
   renderRoster(derived);
@@ -178,6 +186,69 @@ function renderHero(result, draftComplete) {
       </div>
     </div>
   `;
+}
+
+function quickMatches() {
+  const query = elements.quickSearch.value;
+  if (!query.trim()) return [];
+  const derived = deriveDraftState(players, state, normalizeSettings(state.settings));
+  return searchAvailable(derived.available, query);
+}
+
+function renderQuick() {
+  const searching = elements.quickSearch.value.trim().length > 0;
+  elements.quickClear.hidden = !searching;
+  elements.quickResults.hidden = !searching;
+  elements.boardSection.hidden = searching;
+  elements.availableSection.hidden = searching;
+  if (!searching) {
+    elements.quickResults.innerHTML = '';
+    elements.quickHint.textContent = 'Press return to mark the top match taken.';
+    return;
+  }
+
+  const matches = quickMatches();
+  if (!matches.length) {
+    elements.quickHint.textContent = 'No available player matches that search.';
+    elements.quickResults.innerHTML = '<div class="empty-state compact"><span>Already off the board or misspelled.</span></div>';
+    return;
+  }
+
+  elements.quickHint.textContent = `Return marks ${matches[0].name} taken.`;
+  elements.quickResults.innerHTML = matches.map((player) => `
+    <article class="available-row quick-row">
+      <span class="position-badge ${player.position.toLowerCase()}">${player.position}</span>
+      <div class="player-summary">
+        <div><strong>${escapeHtml(player.name)}</strong><span>${escapeHtml(player.team)} · ${player.position}${player.positionRank}</span></div>
+        <small>V3.1 #${player.v31Rank} · ADP ${formatNumber(player.adp)}</small>
+      </div>
+      <div class="row-actions quick-actions">
+        <button class="button taken-button" data-player-id="${player.id}" data-owner="OPPONENT" type="button">Taken</button>
+        <button class="button draft-small" data-player-id="${player.id}" data-owner="ME" type="button">Mine</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function takeTopQuickMatch(event) {
+  event.preventDefault();
+  const [top] = quickMatches();
+  if (!top) {
+    showToast('No available player matches that search', true);
+    return;
+  }
+  elements.quickSearch.value = '';
+  try {
+    updateState(applyPick(state, top.id, 'OPPONENT'), `${top.name} marked taken`);
+  } catch (error) {
+    showToast(error.message, true);
+  }
+}
+
+function clearQuickSearch() {
+  elements.quickSearch.value = '';
+  renderQuick();
+  elements.quickSearch.focus();
 }
 
 function renderRecommendations(results) {

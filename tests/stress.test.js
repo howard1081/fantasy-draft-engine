@@ -10,6 +10,7 @@ import {
   myPickNumbers,
   recommend,
   roundForPick,
+  searchAvailable,
   teamOnClock,
   tierCliffScore,
 } from '../src/engine.js';
@@ -66,22 +67,26 @@ const ev = (pick, playerId, owner, teamIndex) => ({
 /* ------------------------------------------------------------------ *
  * 1. Snake math for every slot
  * ------------------------------------------------------------------ */
-test('snake math is consistent for all 12 slots over 16 rounds', () => {
+test('snake math is consistent for 12-team and 16-team drafts over 16 rounds', () => {
   assert.deepEqual(myPickNumbers(1, 12, 4), [1, 24, 25, 48]);
   assert.deepEqual(myPickNumbers(6, 12, 4), [6, 19, 30, 43]);
   assert.deepEqual(myPickNumbers(12, 12, 4), [12, 13, 36, 37]);
+  assert.deepEqual(myPickNumbers(1, 16, 4), [1, 32, 33, 64]);
+  assert.deepEqual(myPickNumbers(16, 16, 4), [16, 17, 48, 49]);
 
-  const seen = new Set();
-  for (let slot = 1; slot <= 12; slot += 1) {
-    const picks = myPickNumbers(slot, 12, 16);
-    assert.equal(picks.length, 16, `slot ${slot} should own 16 picks`);
-    for (const pick of picks) {
-      assert.equal(teamOnClock(pick, 12), slot, `pick ${pick} should belong to slot ${slot}`);
-      assert.ok(!seen.has(pick), `pick ${pick} claimed twice`);
-      seen.add(pick);
+  for (const teams of [12, 16]) {
+    const seen = new Set();
+    for (let slot = 1; slot <= teams; slot += 1) {
+      const picks = myPickNumbers(slot, teams, 16);
+      assert.equal(picks.length, 16, `slot ${slot} should own 16 picks`);
+      for (const pick of picks) {
+        assert.equal(teamOnClock(pick, teams), slot, `pick ${pick} should belong to slot ${slot}`);
+        assert.ok(!seen.has(pick), `pick ${pick} claimed twice`);
+        seen.add(pick);
+      }
     }
+    assert.equal(seen.size, teams * 16);
   }
-  assert.equal(seen.size, 192);
 });
 
 /* ------------------------------------------------------------------ *
@@ -431,6 +436,42 @@ test('opponent picks are attributed to the correct snake team and tracked per ro
 /* ------------------------------------------------------------------ *
  * 7. Full 12-team x 16-round simulations from all 12 slots
  * ------------------------------------------------------------------ */
+test('quick search finds available players and drops drafted ones', () => {
+  const settings = settingsFor(4);
+  let state = createInitialState(settings);
+  const target = deriveDraftState(REAL_PLAYERS, state, settings).available
+    .find((p) => p.status === 'ACTIVE');
+
+  const first = target.name.split(' ')[0];
+  const matches = searchAvailable(
+    deriveDraftState(REAL_PLAYERS, state, settings).available,
+    first,
+  );
+  assert.ok(matches.some((p) => p.id === target.id), 'search must surface the player');
+  assert.ok(matches.length <= 8, 'quick search stays short enough to tap');
+
+  state = applyPick(state, target.id, 'OPPONENT');
+  const after = searchAvailable(
+    deriveDraftState(REAL_PLAYERS, state, settings).available,
+    target.name,
+  );
+  assert.ok(!after.some((p) => p.id === target.id), 'taken player must leave quick search');
+});
+
+test('quick search ranks name-prefix matches over substring matches', () => {
+  const pool = [
+    P('sub', 'WR', 4, 40, { }),
+    P('lead', 'RB', 9, 90, { }),
+  ];
+  pool[0].name = 'Marcus Ashton';
+  pool[1].name = 'Ash Carter';
+
+  const ranked = searchAvailable(pool, 'ash').map((p) => p.name);
+  assert.deepEqual(ranked, ['Ash Carter', 'Marcus Ashton']);
+  assert.deepEqual(searchAvailable(pool, '   '), []);
+  assert.deepEqual(searchAvailable(pool, 'zzz'), []);
+});
+
 function opponentPick(available, counts, round, settings) {
   const need = (player) => {
     const pos = player.position;
@@ -450,11 +491,13 @@ function opponentPick(available, counts, round, settings) {
     .sort((a, b) => b.score - a.score || a.p.v31Rank - b.p.v31Rank)[0]?.p ?? null;
 }
 
-for (let slot = 1; slot <= 12; slot += 1) {
-  test(`full 12-team x 16-round snake simulation from slot ${slot}`, () => {
-    const settings = settingsFor(slot);
+function runFullDraftSimulation(teams, slot) {
+    const requestedSettings = settingsFor(slot, { teams });
     const storage = memoryStorage();
-    let state = createInitialState(settings);
+    let state = createInitialState(requestedSettings);
+    const settings = state.settings;
+    assert.equal(settings.teams, teams);
+    assert.equal(settings.mySlot, slot);
     const maxPick = settings.teams * settings.rounds;
     const seenIds = new Set();
     const myPicks = [];
@@ -531,5 +574,12 @@ for (let slot = 1; slot <= 12; slot += 1) {
     const undone = undoPick(state);
     assert.equal(undone.pickNumber, maxPick);
     assert.equal(undone.events.length, maxPick - 1);
-  });
+}
+
+for (const teams of [12, 16]) {
+  for (let slot = 1; slot <= teams; slot += 1) {
+    test(`full ${teams}-team x 16-round snake simulation from slot ${slot}`, () => {
+      runFullDraftSimulation(teams, slot);
+    });
+  }
 }
