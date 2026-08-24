@@ -82,13 +82,14 @@ h2 { font-size: 1.1rem; letter-spacing: -.02em; }
 .reason-chips span, .needs span { padding: .35rem .55rem; border: 1px solid var(--line); border-radius: 999px; background: rgb(0 0 0 / 12%); color: #cfe0f2; font-size: .72rem; }
 .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .hero-footer strong { color: var(--text); }
+.hero-actions { display: flex; gap: .6rem; }
 
 .button, .filters button, .icon-btn { min-height: 44px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2); color: var(--text); cursor: pointer; font-weight: 750; }
 .button { padding: .65rem .85rem; }
 .button:disabled { cursor: not-allowed; opacity: .45; }
 .button.primary, .draft-button, .draft-small { border-color: #68f6af; background: var(--accent); color: #062517; }
 .button.danger { border-color: #683f49; background: #301c22; color: #ffb5b5; }
-.taken-small { background: #25364b; }
+.taken-button, .taken-small { background: #25364b; }
 .draft-small, .taken-small { min-width: 68px; padding: .55rem .65rem; }
 .ghost { background: rgb(255 255 255 / 4%); }
 .section-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; border-bottom: 1px solid var(--line); }
@@ -170,7 +171,10 @@ dialog::backdrop { background: rgb(0 0 0 / 68%); backdrop-filter: blur(5px); }
   .player-heading h2 { font-size: 1.35rem; }
   .reason-chips { margin-left: 0; }
   .hero-footer { align-items: stretch; flex-direction: column; }
-  .draft-button { width: 100%; min-height: 52px; }
+  .hero-actions { width: 100%; }
+  .hero-actions .button { min-width: 0; min-height: 52px; }
+  .hero-actions .draft-button { flex: 2; }
+  .hero-actions .taken-button { flex: 1; }
   .recommendation-row { grid-template-columns: 22px minmax(0, 1fr) 48px; }
   .recommendation-row .row-actions { grid-column: 2 / 4; }
   .recommendation-row .row-actions .button { flex: 1; }

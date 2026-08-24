@@ -152,7 +152,7 @@ function renderHero(result, draftComplete) {
 
   const { player } = result;
   elements.hero.innerHTML = `
-    <div class="hero-label">BEST PICK NOW</div>
+    <div class="hero-label">BEST AVAILABLE PICK</div>
     <div class="hero-main">
       <div>
         <div class="player-heading">
@@ -172,7 +172,10 @@ function renderHero(result, draftComplete) {
     </div>
     <div class="hero-footer">
       <span><strong>${Math.round(result.gone * 100)}%</strong> projected gone before next turn</span>
-      <button class="button draft-button" data-player-id="${player.id}" data-owner="ME" type="button">Draft ${escapeHtml(player.name)}</button>
+      <div class="hero-actions">
+        <button class="button draft-button" data-player-id="${player.id}" data-owner="ME" type="button">Draft ${escapeHtml(player.name)}</button>
+        <button class="button taken-button" data-player-id="${player.id}" data-owner="OPPONENT" type="button">Taken</button>
+      </div>
     </div>
   `;
 }
