@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-draft-night-notes-wrap';
+const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-draft-night-cache-reload';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -15,8 +15,13 @@ const CORE_ASSETS = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS)));
-  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(
+        CORE_ASSETS.map((asset) => new Request(asset, { cache: 'reload' })),
+      ))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener('activate', (event) => {

@@ -25,6 +25,7 @@ The final score retains the V3.1 weights in `ALGORITHM_V3_1.md`. Named penalties
 - Imports are validated and normalized.
 - Undo removes one event and exactly restores the prior pick number, availability, and all derived rosters.
 - Static core assets and the player snapshot are cached after the first successful load.
+- New service-worker versions precache with `cache: reload`, preventing the browser HTTP cache from seeding a new Cache Storage version with stale deployment bytes.
 
 ## Data
 `data/players.seed.json` is the supplied V3.1 override set. `data/availability.json` contains a timestamped manual review of current injury and transaction risk. `scripts/update-data.mjs` merges both with a current full-PPR ADP board and writes the draft-night snapshot to `data/players.json`. Fallback players and manually reviewed rows are explicitly labeled in `dataSource`; reviewed notes are also copied to `availabilityNotes` for concise rendering throughout the draft UI.
