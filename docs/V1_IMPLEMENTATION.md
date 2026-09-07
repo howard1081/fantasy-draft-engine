@@ -27,7 +27,7 @@ The final score retains the V3.1 weights in `ALGORITHM_V3_1.md`. Named penalties
 - Static core assets and the player snapshot are cached after the first successful load.
 
 ## Data
-`data/players.seed.json` is the supplied V3.1 override set. `data/availability.json` contains a timestamped manual review of current injury and transaction risk. `scripts/update-data.mjs` merges both with a current full-PPR ADP board and writes the draft-night snapshot to `data/players.json`. Fallback players and manually reviewed rows are explicitly labeled in `dataSource`.
+`data/players.seed.json` is the supplied V3.1 override set. `data/availability.json` contains a timestamped manual review of current injury and transaction risk. `scripts/update-data.mjs` merges both with a current full-PPR ADP board and writes the draft-night snapshot to `data/players.json`. Fallback players and manually reviewed rows are explicitly labeled in `dataSource`; reviewed notes are also copied to `availabilityNotes` for concise rendering throughout the draft UI.
 
 ## Quick Taken
 `searchAvailable` ranks available players by name-prefix match, then V3.1 rank, capped at eight rows. The UI collapses the board and available list while a query is active, so the only visible actions are the matching players. Submitting the field marks the top match taken; every quick action clears the query and returns to the full board.

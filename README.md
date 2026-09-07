@@ -28,6 +28,7 @@ npm run check
 The refresh script downloads current 12-team PPR ADP from Fantasy Football Calculator, merges the supplied V3.1 seed overrides by player name, and applies the manually reviewed statuses and risk notes in `data/availability.json`. The resulting static snapshot is committed so the app has no live network dependency on draft day.
 
 Use `HOLD` only when a player is currently ineligible or has an indefinite absence. Short confirmed absences remain draftable with elevated risk because this is a season-long draft board. Preserve the architecture in `docs/ALGORITHM_V3_1.md` and record substantive model changes in `docs/DECISION_LOG.md`.
+Reviewed availability notes appear on the hero, recommendation, Quick Taken, and available-player rows.
 
 ## Draft-day use
 

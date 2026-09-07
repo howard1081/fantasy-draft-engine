@@ -79,6 +79,9 @@
       "Elite role overrides difficult projected SOS",
       "Psoas soreness; coach expects him to play Week 1"
     ],
+    "availabilityNotes": [
+      "Psoas soreness; coach expects him to play Week 1"
+    ],
     "dataSource": "V3.1 seed + 2026 PPR ADP + manual availability review"
   },
   {
@@ -442,6 +445,10 @@
       "Ankle sprain; coach indicated Week 1 readiness",
       "Apply an early-season health discount"
     ],
+    "availabilityNotes": [
+      "Ankle sprain; coach indicated Week 1 readiness",
+      "Apply an early-season health discount"
+    ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
   },
   {
@@ -583,6 +590,9 @@
       "2026 PPR market-baseline fallback",
       "High ankle sprain; reported near 50/50 for Week 1"
     ],
+    "availabilityNotes": [
+      "High ankle sprain; reported near 50/50 for Week 1"
+    ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
   },
   {
@@ -662,6 +672,9 @@
     "status": "ACTIVE",
     "notes": [
       "Health/recovery risk",
+      "ACL and meniscus recovery; Week 1 workload is not confirmed"
+    ],
+    "availabilityNotes": [
       "ACL and meniscus recovery; Week 1 workload is not confirmed"
     ],
     "dataSource": "V3.1 seed + 2026 PPR ADP + manual availability review"
@@ -763,6 +776,10 @@
     "status": "HOLD",
     "notes": [
       "2026 PPR market-baseline fallback",
+      "Commissioner's exempt list; cannot practice or play while listed",
+      "Return timeline remains indefinite"
+    ],
+    "availabilityNotes": [
       "Commissioner's exempt list; cannot practice or play while listed",
       "Return timeline remains indefinite"
     ],
@@ -1348,6 +1365,9 @@
       "2026 PPR market-baseline fallback",
       "Ankle injury; unlikely to play Week 1 after extended practice absence"
     ],
+    "availabilityNotes": [
+      "Ankle injury; unlikely to play Week 1 after extended practice absence"
+    ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
   },
   {
@@ -1869,6 +1889,9 @@
       "2026 PPR market-baseline fallback",
       "Achilles recovery; practicing without limitations"
     ],
+    "availabilityNotes": [
+      "Achilles recovery; practicing without limitations"
+    ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
   },
   {
@@ -2108,6 +2131,9 @@
     "status": "ACTIVE",
     "notes": [
       "2026 PPR market-baseline fallback",
+      "ACL recovery; expected to play with possible early pitch count"
+    ],
+    "availabilityNotes": [
       "ACL recovery; expected to play with possible early pitch count"
     ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
@@ -3031,6 +3057,9 @@
       "2026 PPR market-baseline fallback",
       "Reserve PUP; unavailable for at least the first four games"
     ],
+    "availabilityNotes": [
+      "Reserve PUP; unavailable for at least the first four games"
+    ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
   },
   {
@@ -3670,6 +3699,9 @@
     "status": "ACTIVE",
     "notes": [
       "2026 PPR market-baseline fallback",
+      "Injured reserve; eligible to return Week 5"
+    ],
+    "availabilityNotes": [
       "Injured reserve; eligible to return Week 5"
     ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"
@@ -4411,6 +4443,9 @@
     "status": "ACTIVE",
     "notes": [
       "2026 PPR market-baseline fallback",
+      "Injured reserve with return designation; eligible to return Week 5"
+    ],
+    "availabilityNotes": [
       "Injured reserve with return designation; eligible to return Week 5"
     ],
     "dataSource": "2026 PPR ADP baseline + manual availability review"

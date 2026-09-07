@@ -47,6 +47,7 @@ const players = payload.players.map((source, index) => {
     risk: currentAvailability?.risk ?? override?.risk ?? 30,
     status: currentAvailability?.status ?? override?.status ?? 'ACTIVE',
     notes: [...new Set([...baselineNotes, ...(currentAvailability?.notes ?? [])])],
+    availabilityNotes: currentAvailability?.notes,
     dataSource: [
       override ? 'V3.1 seed + 2026 PPR ADP' : '2026 PPR ADP baseline',
       currentAvailability ? 'manual availability review' : null,

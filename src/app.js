@@ -171,6 +171,7 @@ function renderHero(result, draftComplete) {
           </div>
         </div>
         <div class="reason-chips">${result.reasons.map((reason) => `<span>${escapeHtml(reason)}</span>`).join('')}</div>
+        ${renderAvailabilityNote(player)}
       </div>
       <div class="score-block">
         <span>Dynamic score</span>
@@ -221,6 +222,7 @@ function renderQuick() {
       <div class="player-summary">
         <div><strong>${escapeHtml(player.name)}</strong><span>${escapeHtml(player.team)} · ${player.position}${player.positionRank}</span></div>
         <small>V3.1 #${player.v31Rank} · ADP ${formatNumber(player.adp)}</small>
+        ${renderAvailabilityNote(player)}
       </div>
       <div class="row-actions quick-actions">
         <button class="button taken-button" data-player-id="${player.id}" data-owner="OPPONENT" type="button">Taken</button>
@@ -264,6 +266,7 @@ function renderRecommendations(results) {
         <div class="player-summary">
           <div><strong>${escapeHtml(player.name)}</strong><span>${player.position} · ${escapeHtml(player.team)} · ADP ${formatNumber(player.adp)}</span></div>
           <small>${escapeHtml(result.reasons.join(' · '))}</small>
+          ${renderAvailabilityNote(player)}
         </div>
         <div class="compact-score"><strong>${result.score.toFixed(1)}</strong><span>${result.label}</span></div>
         <div class="row-actions">
@@ -301,6 +304,7 @@ function renderAvailable() {
       <div class="player-summary">
         <div><strong>${escapeHtml(player.name)}</strong><span>${escapeHtml(player.team)} · ${player.position}${player.positionRank}</span></div>
         <small>V3.1 #${player.v31Rank} · ADP ${formatNumber(player.adp)} · Tier ${player.tier}${player.status !== 'ACTIVE' ? ` · ${player.status}` : ''}</small>
+        ${renderAvailabilityNote(player)}
       </div>
       <div class="row-actions">
         <button class="button draft-small" data-player-id="${player.id}" data-owner="ME" type="button">Draft</button>
@@ -433,6 +437,11 @@ function formatDate(value) {
   if (!value) return 'unknown';
   return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     .format(new Date(value));
+}
+
+function renderAvailabilityNote(player) {
+  if (!player.availabilityNotes?.length) return '';
+  return `<small class="availability-note"><strong>Availability:</strong> ${escapeHtml(player.availabilityNotes.join(' · '))}</small>`;
 }
 
 function escapeHtml(value) {

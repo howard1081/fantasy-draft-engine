@@ -80,6 +80,8 @@ h2 { font-size: 1.1rem; letter-spacing: -.02em; }
 .reason-chips, .needs, .filters { display: flex; flex-wrap: wrap; gap: .4rem; }
 .reason-chips { margin: .9rem 0 0 3.25rem; }
 .reason-chips span, .needs span { padding: .35rem .55rem; border: 1px solid var(--line); border-radius: 999px; background: rgb(0 0 0 / 12%); color: #cfe0f2; font-size: .72rem; }
+.availability-note { display: block; margin-top: .35rem; color: #ffd08a; font-size: .72rem; line-height: 1.35; }
+.hero .availability-note { margin: .65rem 0 0 3.25rem; }
 .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .hero-footer strong { color: var(--text); }
 .hero-actions { display: flex; gap: .6rem; }
@@ -178,6 +180,7 @@ dialog::backdrop { background: rgb(0 0 0 / 68%); backdrop-filter: blur(5px); }
   .player-heading { padding-right: 76px; align-items: flex-start; }
   .player-heading h2 { font-size: 1.35rem; }
   .reason-chips { margin-left: 0; }
+  .hero .availability-note { margin-left: 0; }
   .hero-footer { align-items: stretch; flex-direction: column; }
   .hero-actions { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); width: 100%; }
   .hero-actions .button { min-width: 0; min-height: 52px; }

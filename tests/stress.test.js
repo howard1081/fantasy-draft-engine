@@ -170,6 +170,7 @@ test('draft-night snapshot is unique, deep enough, and applies reviewed availabi
   assert.equal(byName['Josh Jacobs'].status, 'HOLD');
   assert.equal(byName['Ashton Jeanty'].status, 'ACTIVE');
   assert.equal(byName['Ashton Jeanty'].v31Rank, 22);
+  assert.ok(byName['Ashton Jeanty'].availabilityNotes.length > 0);
   assert.ok(byName['Zach Charbonnet'].risk >= 80);
   assert.ok(byName['Tank Dell'].risk >= 80);
 });
