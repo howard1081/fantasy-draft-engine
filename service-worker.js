@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v1-20260824-quick-taken';
+const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-draft-night';
 const CORE_ASSETS = [
   './',
   './index.html',

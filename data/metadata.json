@@ -1,9 +1,19 @@
 {
-  "snapshotDate": "2026-08-24T04:34:13.851Z",
+  "snapshotDate": "2026-09-07T18:46:06.280Z",
   "season": 2026,
   "scoring": "Full PPR",
   "leagueSize": 12,
-  "playerCount": 268,
+  "playerCount": 263,
   "adpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
+  "availabilityReviewedAt": "2026-09-07T18:45:41Z",
+  "availabilitySources": [
+    "https://www.profootballnetwork.com/fantasy-football/fantasy-football-injury-update-latest-on-malik-nabers-jeremiyah-love-ashton-jeanty-and-others/",
+    "https://www.cbssports.com/fantasy/football/news/josh-jacobs-out-indefinitely-fantasy-football-rankings-marshawn-lloyd/",
+    "https://www.fantasynerds.com/news/story/2026/09/07/week-1-nfl-injury-report-henderson-out-nacua-expected-to-play-1616492",
+    "https://www.rotowire.com/football/article/injury-analysis-nfl-emeka-egbuka-131222",
+    "https://www.sharpfootballanalysis.com/analysis/nfl-injury-report-ir-tracker/",
+    "https://www.thebiglead.com/jamarr-chase-puka-nacua-wr-injury-updates-nfl-week-1/",
+    "https://www.thebiglead.com/george-kittle-sam-laporta-te-injury-updates-week-1/"
+  ],
   "methodology": "V3.1 seed overrides merged onto a current market/ADP baseline"
 }

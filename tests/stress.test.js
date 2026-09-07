@@ -158,6 +158,22 @@ test('HOLD and OUT players are never recommended, even when best in class', () =
   }
 });
 
+test('draft-night snapshot is unique, deep enough, and applies reviewed availability', () => {
+  assert.equal(new Set(REAL_PLAYERS.map((player) => player.id)).size, REAL_PLAYERS.length);
+  assert.equal(new Set(REAL_PLAYERS.map((player) => player.name.toLowerCase())).size, REAL_PLAYERS.length);
+  assert.ok(
+    REAL_PLAYERS.filter((player) => player.status === 'ACTIVE').length >= 16 * 16,
+    '16-team x 16-round drafts require at least 256 ACTIVE players',
+  );
+
+  const byName = Object.fromEntries(REAL_PLAYERS.map((player) => [player.name, player]));
+  assert.equal(byName['Josh Jacobs'].status, 'HOLD');
+  assert.equal(byName['Ashton Jeanty'].status, 'ACTIVE');
+  assert.equal(byName['Ashton Jeanty'].v31Rank, 22);
+  assert.ok(byName['Zach Charbonnet'].risk >= 80);
+  assert.ok(byName['Tank Dell'].risk >= 80);
+});
+
 /* ------------------------------------------------------------------ *
  * 3. Undo: exactness, localStorage recovery, bounded chains
  * ------------------------------------------------------------------ */
