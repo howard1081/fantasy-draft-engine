@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Refreshing Draft Board</title>
+</head>
+<body>
+  <p>Refreshing the draft board…</p>
+  <script>
+    Promise.all([
+      navigator.serviceWorker
+        ? navigator.serviceWorker.getRegistrations()
+          .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        : Promise.resolve(),
+      window.caches
+        ? caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+        : Promise.resolve(),
+    ]).finally(() => {
+      window.location.replace(`./?refreshed=${Date.now()}`);
+    });
+  </script>
+</body>
+</html>
