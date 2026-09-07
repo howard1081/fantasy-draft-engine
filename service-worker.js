@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-client-refresh';
+const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-client-refresh-v2';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -41,10 +41,12 @@ self.addEventListener('fetch', (event) => {
       ? './refresh.html'
       : './index.html';
     event.respondWith(
-      fetch(event.request)
+      fetch(new Request(event.request, { cache: 'reload' }))
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(fallback, copy));
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(fallback, copy));
+          }
           return response;
         })
         .catch(() => caches.match(fallback)),
@@ -55,8 +57,10 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((cached) => cached ?? fetch(event.request).then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
         return response;
       })),
   );

@@ -26,7 +26,8 @@ The final score retains the V3.1 weights in `ALGORITHM_V3_1.md`. Named penalties
 - Undo removes one event and exactly restores the prior pick number, availability, and all derived rosters.
 - Static core assets and the player snapshot are cached after the first successful load.
 - New service-worker versions precache with `cache: reload`, preventing the browser HTTP cache from seeding a new Cache Storage version with stale deployment bytes.
-- Online navigations check the network first and fall back to the cached app offline. The client explicitly checks for worker updates and reloads once when a new worker takes control.
+- Online navigations bypass the browser HTTP cache, check the network first, and fall back to the cached app offline. The client explicitly checks for worker updates and reloads once when a new worker takes control.
+- Runtime caching stores only successful responses, so transient 404/error pages are not persisted for offline use.
 - `refresh.html` is a recovery entry point that removes obsolete service-worker registrations and caches before reopening the current deployment.
 
 ## Data
