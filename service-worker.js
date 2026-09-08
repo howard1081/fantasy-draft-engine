@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v4-20260908-matchups';
+const CACHE_NAME = 'fantasy-draft-engine-v4-20260908-matchups2';
 const CORE_ASSETS = [
   './',
   './index.html',

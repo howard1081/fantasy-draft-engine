@@ -279,7 +279,7 @@ Also confirm `.player-summary .availability-note` is present in the *cached* CSS
 
 The hero recommendation, the `DRAFT PLAN` card and the `WHAT THE ROOM LEAVES YOU` outlook are all
 driven by `planPick()` in `src/planner.js`. Cache name for that deploy is
-`fantasy-draft-engine-v4-20260908-matchups`; footer reads `Data snapshot Sep 8, 2026 · 414 players`.
+`fantasy-draft-engine-v4-20260908-matchups2`; footer reads `Data snapshot Sep 8, 2026 · 414 players`.
 
 **Deploy proof must read planner bytes, not just the cache name** (same golden rule as above):
 

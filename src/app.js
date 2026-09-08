@@ -429,7 +429,7 @@ function renderRoster(derived) {
     <div class="lineup-row">
       <span>${slot}</span>
       <strong>${escapeHtml(player.name)} <small>${escapeHtml(player.team)} · ${player.position}</small></strong>
-      <em>${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'}${playoffs ? ` · <b class="playoff-tag ${playoffs.label}" title="Weeks 15-17: ${escapeHtml(playoffSlate(playoffs))}">PO ${playoffs.label}</b>` : ''}</em>
+      <em>${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'}${playoffs ? `<b class="playoff-tag ${playoffs.label}" title="Weeks 15-17: ${escapeHtml(playoffSlate(playoffs))}">PO ${playoffs.label}</b>` : ''}</em>
     </div>
   `;
   };

@@ -166,7 +166,8 @@ h2 { font-size: 1.1rem; letter-spacing: -.02em; }
 .lineup-row > span { color: var(--muted); font-size: .68rem; font-weight: 900; }
 .lineup-row strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .lineup-row strong small { color: var(--muted); font-weight: 500; }
-.lineup-row em { color: var(--muted); font-size: .68rem; font-style: normal; white-space: nowrap; }
+.lineup-row em { color: var(--muted); font-size: .68rem; font-style: normal; text-align: right; white-space: nowrap; }
+.lineup-row em .playoff-tag { display: block; width: max-content; margin: .15rem 0 0 auto; }
 .lineup-row.open strong { color: var(--muted); font-weight: 500; }
 .lineup-divider { margin-top: .4rem; padding: .4rem 0 .2rem; color: var(--accent); font-size: .66rem; font-weight: 900; letter-spacing: .12em; }
 
