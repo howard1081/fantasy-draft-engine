@@ -275,6 +275,82 @@ Also confirm `.player-summary .availability-note` is present in the *cached* CSS
   .some(r => r.selectorText === '.player-summary .availability-note');
 ```
 
+## Testing the lookahead planner UI (`src/planner.js`, since `8cd61bd`)
+
+The hero recommendation, the `DRAFT PLAN` card and the `WHAT THE ROOM LEAVES YOU` outlook are all
+driven by `planPick()` in `src/planner.js`. Cache name for that deploy is
+`fantasy-draft-engine-v2-20260908-planner`; footer reads `Data snapshot Sep 8, 2026 · 415 players`.
+
+**Deploy proof must read planner bytes, not just the cache name** (same golden rule as above):
+
+```js
+const c = await caches.open((await caches.keys())[0]);
+const t = await (await c.match((await c.keys()).find(k => k.url.endsWith('src/planner.js')))).text();
+console.log(t.includes('planRemainingPicks'), t.length);
+```
+
+Also confirm `./src/planner.js` is in `CORE_ASSETS`, otherwise offline reload renders a blank hero.
+
+### Generate exact expected numbers instead of eyeballing "plausible"
+
+Because the app is dependency-free ES modules, you can import the **production** planner in node and
+precompute the values the UI must show. Do this only after confirming production bytes are
+byte-identical to your local checkout (`sha256sum` each of `players.json`, `planner.js`, `app.js`,
+`state.js`, `styles.css`, `index.html`); that's what licenses using local code as the oracle. Correct
+import names: `applyPick`/`undoPick`/`deletePick`/`replacePick`/`validateState` from `src/state.js`
+(there is no `addPick`), and `normalizeSettings` lives in `src/state.js`, **not** `src/engine.js`.
+
+A planner-driven hero is proven by values a "best available" hero cannot produce — e.g. 12-team/slot-1
+fresh shows `YOUR PICK · 15 PICKS PLANNED AHEAD`, Jahmyr Gibbs, `Roster pts 1982`, `0 → 1982 pts`;
+after drafting him it flips to `TARGET FOR YOUR PICK #24` with `351 → 1961 pts`.
+
+### Off-clock label
+
+With `slot != 1` the app starts **off the clock**, so at pick 1 the hero must read
+`TARGET FOR YOUR PICK #N`, not the on-clock label. 16 teams / slot 16 → `TARGET FOR YOUR PICK #16`,
+Trey McBride, `Roster pts 1821`, `78% chance still there at #16`, and `#logFilter` grows to
+**17** options (`teams + 1`).
+
+### Overflow expectations at 390 px
+
+`#planStrip` is **supposed** to overflow horizontally (`scrollWidth` ≈1464 vs `clientWidth` ≈356) —
+that is the intended internal scroller. The assertion is only about the **document**:
+`document.documentElement.scrollWidth <= clientWidth` (390/390). Do not report the strip as a defect.
+
+### Independent scroll panels — the roster needs enough content to overflow
+
+`#roster` and `#recentPicks` are `.scroll-panel` (`overflow-y: auto`). A fresh/small roster gives
+`scrollHeight === clientHeight`, so scrolling proves nothing and you must **not** call it passed.
+Build a real roster first — tapping the hero `Draft` button repeatedly drafts to your team (9 picks
+gave `scrollHeight 420 > clientHeight 388`, 13 rows). Then `scrollIntoView({block:'center'})` the
+panel, wheel over it, and assert its `scrollTop` moved while `window.scrollY` **and** the other
+panel's `scrollTop` are unchanged.
+
+Correct row selector for the log is **`.recent-row`** (not `.pick-row`); or just read
+`recentPicks.children.length`.
+
+### Fix dialog
+
+`<dialog id="fixDialog">`. `replacePick()` keeps the pick position; `deletePick()` + `validateState()`
+recompute `pick = index + 1`, `round`, `teamIndex` and `pickNumber = events.length + 1`, so deleting
+pick #1 really does renumber the survivor to `R1 · #1`. Assert the renumbering, not just the deletion.
+
+### Console-error check hygiene
+
+Your own malformed probes (`JSON.stringify` syntax errors, referencing an unset `window.__b`) land in
+the same console and will look like app errors in a screenshot. **Clear the console (`ctrl+L`), then
+reload, then screenshot** for the no-errors assertion. Beware regexes like
+`body.textContent.match(/Data snapshot[^A-Z]*/)` — it stops at the capital `S` in `Sep` and returns
+just `"Data snapshot"`, which looks like a truncated footer. Use
+`document.body.innerText.split('\n').filter(l => /Data snapshot/.test(l))[0]` instead.
+
+### Desktop-width pass with DevTools
+
+Turning off device emulation is not enough if DevTools is **docked to the right** — the page viewport
+stays ~390 px. Undock DevTools into a separate window (Customize menu > dock side > undock) so the
+page gets true desktop width (`innerWidth` 1600, `docSW === docCW === 1585`). Note the `browser_console`
+tool's CDP evaluation fails while DevTools is undocked; use the DevTools window's own Console instead.
+
 ## Gotchas
 
 - Console tools sometimes attach to the **DevTools frontend** instead of the inspected page. Use the
