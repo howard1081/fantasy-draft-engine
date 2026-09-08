@@ -3,12 +3,17 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { DEFAULT_SETTINGS, deriveDraftState, roundForPick, teamOnClock } from '../src/engine.js';
 import {
+  PLAYOFF_WEEKS,
+  PLAYOFF_WEIGHT,
+  WEIGHTED_GAMES,
   byeConflicts,
+  effectivePpg,
   expectedPositionValues,
   fillLineup,
   planPick,
   rosterSeasonValue,
   waiverLevels,
+  weekWeight,
 } from '../src/planner.js';
 import {
   applyPick,
@@ -102,6 +107,33 @@ test('fillLineup fills dedicated slots first, then FLEX, then bench', () => {
   assert.equal(bySlot.K1, 'K1');
   assert.deepEqual(lineup.openSlots.map((slot) => slot.slot), ['DST1']);
   assert.equal(lineup.bench.length, 0);
+});
+
+test('lineup composition, not raw depth, drives value: a 4th WR is bench-only, a starter counts every week', () => {
+  const waiver = { QB: 14, RB: 5, WR: 6, TE: 6, DST: 5, K: 7 };
+  const core = [
+    PP('RB1', 'RB', 1, 20), PP('RB2', 'RB', 10, 16), PP('WR1', 'WR', 3, 19), PP('WR2', 'WR', 12, 15),
+    PP('WR3', 'WR', 30, 13), PP('TE1', 'TE', 25, 13), PP('K1', 'K', 150, 8), PP('DST1', 'DST', 140, 7),
+  ];
+  const base = rosterSeasonValue(core, DEFAULT_SETTINGS, waiver).total;
+  const fourthWr = rosterSeasonValue([...core, PP('WR4', 'WR', 45, 12)], DEFAULT_SETTINGS, waiver).total;
+  const qb = rosterSeasonValue([...core, PP('QB1', 'QB', 60, 17)], DEFAULT_SETTINGS, waiver).total;
+  assert.ok(fourthWr - base < 4 * 12, 'a 4th WR only adds bench coverage, not a season of starts');
+  assert.ok(qb - base > 15 * 17 * 0.9, 'filling the empty QB slot adds roughly a full season of starts');
+  assert.ok(qb > fourthWr);
+});
+
+test('fantasy-playoff weeks count more than regular-season weeks in the lineup objective', () => {
+  assert.deepEqual(PLAYOFF_WEEKS, [15, 16, 17]);
+  assert.equal(weekWeight(15), PLAYOFF_WEIGHT);
+  assert.equal(weekWeight(8), 1);
+  assert.ok(PLAYOFF_WEIGHT > 1);
+  const starter = PP('RB1', 'RB', 1, 20, { bye: 8 });
+  const only = [starter, PP('QB1', 'QB', 20, 22), PP('RB2', 'RB', 10, 16), PP('WR1', 'WR', 3, 19), PP('WR2', 'WR', 12, 15), PP('TE1', 'TE', 25, 13), PP('K1', 'K', 150, 8), PP('DST1', 'DST', 140, 7)];
+  const waiver = { QB: 0, RB: 0, WR: 0, TE: 0, DST: 0, K: 0 };
+  const { total } = rosterSeasonValue(only, DEFAULT_SETTINGS, waiver);
+  const expected = only.reduce((sum, player) => sum + effectivePpg(player) * WEIGHTED_GAMES, 0);
+  assert.ok(Math.abs(total - expected) < 1e-6, `weighted season total ${total} should equal ${expected}`);
 });
 
 test('a backup QB on a different bye is worth more than one sharing the starter bye', () => {

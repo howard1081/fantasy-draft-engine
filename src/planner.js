@@ -13,6 +13,14 @@ import {
 
 export const GAMES = 17;
 export const SEASON_WEEKS = 18;
+export const PLAYOFF_WEEKS = [15, 16, 17];
+export const PLAYOFF_WEIGHT = 1.5;
+
+export function weekWeight(week) {
+  return PLAYOFF_WEEKS.includes(week) ? PLAYOFF_WEIGHT : 1;
+}
+// Starter games weighted so a playoff week counts PLAYOFF_WEIGHT regular weeks.
+export const WEIGHTED_GAMES = GAMES + PLAYOFF_WEEKS.length * (PLAYOFF_WEIGHT - 1);
 const FLEX_POSITIONS = ['RB', 'WR', 'TE'];
 const MAX_DEPTH = 6;
 const FORBIDDEN = -1e6;
@@ -98,21 +106,22 @@ export function rosterSeasonValue(rosterPlayers, settings = DEFAULT_SETTINGS, wa
   let total = 0;
   for (let week = 1; week <= SEASON_WEEKS; week += 1) {
     const used = new Set();
+    const weight = weekWeight(week);
     for (const starter of lineup.starters) {
       if (starter.player.bye === week) {
         const cover = bestCover(starter, lineup.bench, week, used, waiver);
         if (cover) {
           used.add(cover.id);
-          total += coverValue(cover, waiver);
+          total += weight * coverValue(cover, waiver);
         }
       } else {
-        total += effectivePpg(starter.player);
+        total += weight * effectivePpg(starter.player);
       }
     }
   }
   for (const starter of lineup.starters) {
     const cover = bestCover(starter, lineup.bench, null, new Set(), waiver);
-    if (cover) total += missRate(starter.player) * GAMES * coverValue(cover, waiver);
+    if (cover) total += missRate(starter.player) * WEIGHTED_GAMES * coverValue(cover, waiver);
   }
   return { total, lineup };
 }
@@ -251,7 +260,7 @@ function planRemainingPicks(context, rosterPlayers, expectations) {
   const slots = lineup.openSlots.map((slot) => {
     const eligible = slot.eligible.map((position) => {
       openCounts[position] = (openCounts[position] ?? 0) + 1;
-      return { position, n: starterCounts[position] + openCounts[position], games: GAMES };
+      return { position, n: starterCounts[position] + openCounts[position], games: WEIGHTED_GAMES };
     });
     return { slot: slot.slot, options: eligible, starter: true };
   });
