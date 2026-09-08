@@ -351,6 +351,93 @@ stays ~390 px. Undock DevTools into a separate window (Customize menu > dock sid
 page gets true desktop width (`innerWidth` 1600, `docSW === docCW === 1585`). Note the `browser_console`
 tool's CDP evaluation fails while DevTools is undocked; use the DevTools window's own Console instead.
 
+**Sequence that works reliably** (verified): (1) undock DevTools; (2) focus the *page* window and
+`wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz`; (3) focus the *DevTools* window and click
+its **"Toggle device toolbar"** button (leftmost group of the main toolbar, next to the inspect arrow)
+to leave emulation. Do **not** send `ctrl+shift+m` to the page window — in this Chromium build that
+keystroke opens the **profile menu** instead of toggling the device toolbar, which silently leaves you
+at 390 px and makes the desktop pass vacuous. Verify `innerWidth` really is ~1600 before asserting.
+
+## Testing defense-vs-position matchups and the playoff slate UI (since `7e1180e`)
+
+Cache name `fantasy-draft-engine-v4-20260908-matchups2` (**15** precached entries), new asset
+`data/matchups.json` (~44 kB; `schedule[TEAM][week] = {opponent, home}`, `defense[TEAM][POS]` ratios,
+`playoffWeeks [15,16,17]`, 32 teams in each map). Footer `Data snapshot Sep 8, 2026 · 414 players`
+(free agents were dropped, so 414 — a footer reading 415 means a stale build).
+
+`src/planner.js` exports `setMatchups`, `matchupFactor`, `playoffOutlook`, `playoffSlate`,
+`MATCHUP_CAP` (0.1). `matchupFactor` = `1 + clamp(±0.1, 0.5 * (ratio - 1))` — shrunk **and** capped.
+`playoffOutlook` averages the wk 15/16/17 factors; `label = f >= 1.04 ? 'soft' : f <= 0.96 ? 'tough' : 'neutral'`.
+
+### The load-bearing discriminator: a cache bump does not prove the new *math* runs
+
+`setMatchups(null)` is a legitimate fallback path (`src/app.js` does
+`fetch('data/matchups.json').then(r => r.ok ? r.json() : null).catch(() => null)`), so a build with a
+new cache name but no matchup data renders a **perfectly healthy-looking app** — just with the slate UI
+absent and unweighted roster values. Use `Roster pts` as the discriminator: 12 teams / slot 1 fresh
+shows **2159** with matchup weighting vs **1982** before it (`8cd61bd`). Reference oracle for drafting
+the hero recommendation five times in a row:
+
+| # | hero | Roster pts | slate | tag |
+|---|---|---|---|---|
+| 1 | Jahmyr Gibbs RB DET 21.7 ppg bye 6 | **2159** | `@MIN vsNYG @CHI` | neutral |
+| 2 | Brock Bowers TE LV 14.2 bye 13 | 2164 | `vsDEN vsTEN @ARI` | **soft** |
+| 3 | Jalen Hurts QB PHI 18.8 bye 10 | 2195 | `vsSEA vsHOU @SF` | **tough** |
+| 4 | Chris Olave WR NO 14.7 bye 8 | 2227 | `@TB vsARI @ATL` | neutral |
+| 5 | Rashee Rice WR KC 15.3 bye 5 | 2270 | `vsNE vsSF @LAC` | neutral |
+
+That sequence deliberately yields one `soft` and one `tough` entry, so a build that hardcoded a single
+label gets caught. Pool-wide distribution is neutral 316 / soft 51 / tough 47.
+
+To prove the line is data-driven rather than static markup, use DevTools **request blocking** on
+`*matchups.json*` and reload: the app must still render fully (hero, plan, footer `414 players`) with
+`document.querySelectorAll('.playoff-slate, .playoff-tag').length === 0` and `Roster pts` back to the
+unweighted value. Unblock and reload → the line and tags return.
+
+### Hero vs alternatives asymmetry (easy to get wrong)
+
+The hero **strips** the slate reason chip because it has a dedicated line (`src/app.js:221` filters
+`!/chance still there|playoff slate/`), while `.recommendation-row` renders `reasons.join(' · ')`
+unfiltered so alternatives **keep** a `soft playoff slate (...)` chip. Assert both directions — no hero
+chip matching `/playoff slate/`, **and** at least one alternative carrying it.
+
+### My Team `PO` tags: measure name clipping, never eyeball it
+
+Each lineup row renders `<b class="playoff-tag LABEL" title="Weeks 15-17: SLATE">PO LABEL</b>` inside
+the right-hand `<em>` after `ppg · bye N`. **A real regression shipped here:** with the tag inline in a
+`white-space: nowrap` `em`, the tag consumed the name column and **all 5 lineup names were clipped**,
+yet the layout looked fine at a glance. The fix stacks the tag on its own line:
+
+```css
+.lineup-row em { ...; text-align: right; white-space: nowrap; }
+.lineup-row em .playoff-tag { display: block; width: max-content; margin: .15rem 0 0 auto; }
+```
+
+Build a **5+ player roster first** (tap the hero `Draft` button repeatedly), then measure objectively:
+
+```js
+const rows = [...document.querySelectorAll('#roster .lineup-row')].filter(r => r.querySelector('.playoff-tag'));
+const m = rows.map(r => {
+  const s = r.querySelector('strong'), b = r.querySelector('.playoff-tag');
+  const sr = s.getBoundingClientRect(), br = b.getBoundingClientRect();
+  return { name: s.textContent.trim(), clipped: s.scrollWidth > s.clientWidth, tag: b.textContent.trim(),
+           title: b.title, tagDisplay: getComputedStyle(b).display,
+           below: br.top >= sr.top, overlap: br.left < sr.right - 1 };
+});
+console.log(JSON.stringify({ clippedCount: m.filter(x => x.clipped).length, total: m.length, rows: m }, null, 1));
+```
+
+Pass bar: `clippedCount: 0`, every `tagDisplay: "block"`, `below: true`, `overlap: false`, and each
+`title` matching the oracle exactly (e.g. `Weeks 15-17: vsDEN vsTEN @ARI`). Verify the fix by **cached
+bytes**, not the cache name: the cached `styles.css` must contain `em .playoff-tag`.
+
+Hover tooltips: the native OS tooltip frequently does **not** appear in screen captures. Read the
+`title` attribute instead and report hover as *inconclusive* rather than claiming it passed.
+
+The hero slate line lives **outside** `.player-summary`, so it escapes the
+`overflow:hidden/ellipsis/nowrap` trap — expect `whiteSpace: "normal"`, `CLIPPED: false`, `right <= 390`
+at mobile width, with exactly 3 tokens each matching `/^(vs|@)[A-Z]{2,3}$|^bye$/`.
+
 ## Gotchas
 
 - Console tools sometimes attach to the **DevTools frontend** instead of the inspected page. Use the
