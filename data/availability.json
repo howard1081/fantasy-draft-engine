@@ -1,0 +1,104 @@
+{
+  "reviewedAt": "2026-09-07T18:45:41Z",
+  "sources": [
+    "https://www.profootballnetwork.com/fantasy-football/fantasy-football-injury-update-latest-on-malik-nabers-jeremiyah-love-ashton-jeanty-and-others/",
+    "https://www.cbssports.com/fantasy/football/news/josh-jacobs-out-indefinitely-fantasy-football-rankings-marshawn-lloyd/",
+    "https://www.fantasynerds.com/news/story/2026/09/07/week-1-nfl-injury-report-henderson-out-nacua-expected-to-play-1616492",
+    "https://www.rotowire.com/football/article/injury-analysis-nfl-emeka-egbuka-131222",
+    "https://www.sharpfootballanalysis.com/analysis/nfl-injury-report-ir-tracker/",
+    "https://www.thebiglead.com/jamarr-chase-puka-nacua-wr-injury-updates-nfl-week-1/",
+    "https://www.thebiglead.com/george-kittle-sam-laporta-te-injury-updates-week-1/"
+  ],
+  "players": [
+    {
+      "name": "Ashton Jeanty",
+      "status": "ACTIVE",
+      "risk": 60,
+      "notes": [
+        "Ankle sprain; coach indicated Week 1 readiness",
+        "Apply an early-season health discount"
+      ]
+    },
+    {
+      "name": "Josh Jacobs",
+      "status": "HOLD",
+      "risk": 100,
+      "notes": [
+        "Commissioner's exempt list; cannot practice or play while listed",
+        "Return timeline remains indefinite"
+      ]
+    },
+    {
+      "name": "Jeremiyah Love",
+      "status": "ACTIVE",
+      "risk": 70,
+      "notes": [
+        "High ankle sprain; reported near 50/50 for Week 1"
+      ]
+    },
+    {
+      "name": "TreVeyon Henderson",
+      "status": "ACTIVE",
+      "risk": 65,
+      "notes": [
+        "Ankle injury; unlikely to play Week 1 after extended practice absence"
+      ]
+    },
+    {
+      "name": "Malik Nabers",
+      "status": "ACTIVE",
+      "risk": 65,
+      "notes": [
+        "ACL and meniscus recovery; Week 1 workload is not confirmed"
+      ]
+    },
+    {
+      "name": "Puka Nacua",
+      "status": "ACTIVE",
+      "risk": 28,
+      "notes": [
+        "Psoas soreness; coach expects him to play Week 1"
+      ]
+    },
+    {
+      "name": "George Kittle",
+      "status": "ACTIVE",
+      "risk": 55,
+      "notes": [
+        "Achilles recovery; practicing without limitations"
+      ]
+    },
+    {
+      "name": "Tucker Kraft",
+      "status": "ACTIVE",
+      "risk": 60,
+      "notes": [
+        "ACL recovery; expected to play with possible early pitch count"
+      ]
+    },
+    {
+      "name": "Zach Charbonnet",
+      "status": "ACTIVE",
+      "risk": 85,
+      "notes": [
+        "Reserve PUP; unavailable for at least the first four games"
+      ]
+    },
+    {
+      "name": "Isiah Pacheco",
+      "status": "ACTIVE",
+      "risk": 85,
+      "notes": [
+        "Injured reserve; eligible to return Week 5"
+      ]
+    },
+    {
+      "name": "Tank Dell",
+      "status": "ACTIVE",
+      "risk": 85,
+      "notes": [
+        "Injured reserve with return designation; eligible to return Week 5"
+      ]
+    }
+  ]
+}

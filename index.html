@@ -1,69 +1,129 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#111827" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="A live, roster-aware full-PPR fantasy football draft decision engine.">
   <title>V3.1 Live Draft Engine</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
     <div>
-      <div class="eyebrow">2026 • FULL PPR • V3.1</div>
+      <div class="eyebrow">2026 · FULL PPR · V3.1</div>
       <h1>Live Draft Engine</h1>
     </div>
     <div class="top-actions">
-      <button id="undoBtn" class="ghost">Undo</button>
-      <button id="settingsBtn" class="ghost">Settings</button>
+      <button id="undoBtn" class="button ghost" type="button">Undo</button>
+      <button id="settingsBtn" class="button ghost" type="button">Settings</button>
     </div>
   </header>
 
   <main class="layout">
     <section class="main-column">
-      <div class="status-row card">
+      <section class="status-row card" aria-label="Draft status">
         <div><span class="label">Pick</span><strong id="pickNumber">1</strong></div>
         <div><span class="label">Round</span><strong id="roundNumber">1</strong></div>
         <div><span class="label">On clock</span><strong id="onClock">Team 1</strong></div>
         <div><span class="label">My next</span><strong id="nextPick">1</strong></div>
-      </div>
+      </section>
 
-      <section id="hero" class="hero card"></section>
+      <section id="hero" class="hero card" aria-live="polite"></section>
 
-      <section class="card">
+      <section id="planSection" class="card plan-card" aria-label="Draft plan">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">DRAFT PLAN</div>
+            <h2 id="planTitle">Thinking ahead</h2>
+          </div>
+          <span id="planValue" class="count-pill"></span>
+        </div>
+        <div id="planStrip" class="plan-strip"></div>
+        <div id="outlook" class="outlook"></div>
+      </section>
+
+      <section class="card quick-card" aria-label="Quick taken search">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">QUICK TAKEN</div>
+            <h2>Remove a player fast</h2>
+          </div>
+          <button id="quickClear" class="button ghost" type="button" hidden>Clear</button>
+        </div>
+        <form id="quickForm" autocomplete="off">
+          <input id="quickSearch" type="search" placeholder="Type a name, then tap Taken" autocomplete="off" enterkeyhint="done">
+        </form>
+        <p id="quickHint" class="muted quick-hint">Press return to mark the top match taken.</p>
+        <div id="quickResults" class="player-list quick-results" hidden></div>
+      </section>
+
+      <section id="boardSection" class="card">
         <div class="section-head">
           <div>
             <div class="eyebrow">LIVE BOARD</div>
             <h2>Best options now</h2>
           </div>
-          <div class="filters" id="positionFilters"></div>
         </div>
         <div id="recommendations" class="recommendations"></div>
       </section>
 
-      <section class="card">
-        <div class="section-head">
+      <section id="availableSection" class="card">
+        <div class="section-head available-head">
           <div>
             <div class="eyebrow">AVAILABLE PLAYERS</div>
             <h2>Mark picks instantly</h2>
           </div>
-          <input id="searchInput" type="search" placeholder="Search player" autocomplete="off" />
+          <input id="searchInput" type="search" placeholder="Search player or team" autocomplete="off">
         </div>
+        <div id="positionFilters" class="filters" aria-label="Position filters"></div>
         <div id="availableList" class="player-list"></div>
       </section>
     </section>
 
     <aside class="side-column">
-      <section class="card sticky">
-        <div class="eyebrow">MY TEAM</div>
-        <h2 id="myTeamTitle">Draft slot 1</h2>
-        <div id="roster" class="roster"></div>
+      <section class="card roster-card">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">MY TEAM</div>
+            <h2 id="myTeamTitle">Draft slot 1</h2>
+          </div>
+          <span id="rosterCount" class="count-pill">0 / 16</span>
+        </div>
         <div id="rosterNeeds" class="needs"></div>
+        <div id="byeConflicts" class="bye-conflicts"></div>
+        <div id="roster" class="roster scroll-panel"></div>
       </section>
 
       <section class="card">
-        <div class="eyebrow">RECENT PICKS</div>
-        <div id="recentPicks" class="recent-picks"></div>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">DRAFT LOG</div>
+            <h2>Every pick · tap Fix to correct</h2>
+          </div>
+          <select id="logFilter" class="log-filter" aria-label="Filter draft log">
+            <option value="ALL">All teams</option>
+            <option value="ME">My team</option>
+          </select>
+        </div>
+        <div id="recentPicks" class="recent-picks scroll-panel"></div>
+      </section>
+
+      <section class="card utility-card">
+        <div class="eyebrow">DRAFT BACKUP</div>
+        <div class="utility-actions">
+          <button id="exportBtn" class="button ghost" type="button">Export state</button>
+          <button id="importBtn" class="button ghost" type="button">Import state</button>
+          <button id="resetBtn" class="button danger" type="button">Reset draft</button>
+        </div>
+        <input id="importInput" type="file" accept="application/json,.json" hidden>
+        <p id="dataSnapshot" class="muted"></p>
       </section>
     </aside>
   </main>
@@ -76,20 +136,48 @@
       </div>
       <label>Teams
         <select id="teamsSelect">
-          <option>10</option><option selected>12</option>
+          <option value="10">10</option>
+          <option value="12" selected>12</option>
+          <option value="14">14</option>
+          <option value="16">16</option>
         </select>
+      </label>
+      <label>Rounds
+        <input id="roundsInput" type="number" min="10" max="20" value="16">
       </label>
       <label>Your draft slot
         <select id="slotSelect"></select>
       </label>
-      <p class="muted">Changing settings resets the current draft.</p>
+      <p class="muted">Applying league settings resets the current draft.</p>
       <div class="dialog-actions">
-        <button value="cancel" class="ghost">Cancel</button>
-        <button id="applySettings" value="default" class="primary">Apply & reset</button>
+        <button value="cancel" class="button ghost">Cancel</button>
+        <button id="applySettings" value="default" class="button primary">Apply & reset</button>
       </div>
     </form>
   </dialog>
 
+  <dialog id="fixDialog">
+    <div class="settings-card fix-card">
+      <div class="section-head">
+        <div><div class="eyebrow">FIX A PICK</div><h2 id="fixTitle">Pick</h2></div>
+        <button id="fixClose" class="icon-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <p id="fixCurrent" class="muted"></p>
+      <div class="fix-owner" role="group" aria-label="Who made this pick">
+        <button id="fixOwnerOpponent" class="button ghost" type="button" data-fix-owner="OPPONENT">Taken by opponent</button>
+        <button id="fixOwnerMe" class="button ghost" type="button" data-fix-owner="ME">My pick</button>
+      </div>
+      <label>Replace with
+        <input id="fixSearch" type="search" placeholder="Search the correct player" autocomplete="off">
+      </label>
+      <div id="fixResults" class="player-list fix-results"></div>
+      <div class="dialog-actions fix-actions">
+        <button id="fixDelete" class="button danger" type="button">Delete this pick</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script type="module" src="src/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,21 @@
+{
+  "snapshotDate": "2026-09-08T20:57:45.158Z",
+  "season": 2026,
+  "scoring": "Full PPR",
+  "leagueSize": 12,
+  "playerCount": 414,
+  "adpSource": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
+  "secondaryAdpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
+  "projectionSource": "ESPN 2026 season projections (PPR default league)",
+  "availabilityReviewedAt": "2026-09-07T18:45:41Z",
+  "availabilitySources": [
+    "https://www.profootballnetwork.com/fantasy-football/fantasy-football-injury-update-latest-on-malik-nabers-jeremiyah-love-ashton-jeanty-and-others/",
+    "https://www.cbssports.com/fantasy/football/news/josh-jacobs-out-indefinitely-fantasy-football-rankings-marshawn-lloyd/",
+    "https://www.fantasynerds.com/news/story/2026/09/07/week-1-nfl-injury-report-henderson-out-nacua-expected-to-play-1616492",
+    "https://www.rotowire.com/football/article/injury-analysis-nfl-emeka-egbuka-131222",
+    "https://www.sharpfootballanalysis.com/analysis/nfl-injury-report-ir-tracker/",
+    "https://www.thebiglead.com/jamarr-chase-puka-nacua-wr-injury-updates-nfl-week-1/",
+    "https://www.thebiglead.com/george-kittle-sam-laporta-te-injury-updates-week-1/"
+  ],
+  "methodology": "V3.1 seed overrides merged onto ESPN projections + ESPN/FFC ADP; ESPN injury statuses applied"
+}

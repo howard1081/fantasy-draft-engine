@@ -43,6 +43,5 @@
   {"id":"jalen-hurts","name":"Jalen Hurts","team":"PHI","position":"QB","v31Rank":58,"positionRank":3,"tier":2,"projectionValue":88,"adp":50,"upside":94,"risk":22,"status":"ACTIVE"},
   {"id":"joe-burrow","name":"Joe Burrow","team":"CIN","position":"QB","v31Rank":59,"positionRank":6,"tier":3,"projectionValue":83,"adp":56,"upside":91,"risk":30,"status":"ACTIVE"},
   {"id":"jayden-daniels","name":"Jayden Daniels","team":"WAS","position":"QB","v31Rank":60,"positionRank":5,"tier":3,"projectionValue":84,"adp":63,"upside":97,"risk":35,"status":"ACTIVE"},
-  {"id":"justin-herbert","name":"Justin Herbert","team":"LAC","position":"QB","v31Rank":66,"positionRank":7,"tier":4,"projectionValue":81,"adp":99,"upside":91,"risk":20,"status":"ACTIVE","contextSignal":0.7,"notes":["Major draft-value target"]},
-  {"id":"ashton-jeanty","name":"Ashton Jeanty","team":"LV","position":"RB","v31Rank":999,"positionRank":999,"tier":99,"projectionValue":75,"adp":16,"upside":94,"risk":90,"status":"HOLD","notes":["Acute injury status unclear; do not recommend until refreshed"]}
+  {"id":"justin-herbert","name":"Justin Herbert","team":"LAC","position":"QB","v31Rank":66,"positionRank":7,"tier":4,"projectionValue":81,"adp":99,"upside":91,"risk":20,"status":"ACTIVE","contextSignal":0.7,"notes":["Major draft-value target"]}
 ]

@@ -1,10 +1,14 @@
 {
   "name": "fantasy-draft-engine",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/*.test.js",
+    "test:stress": "node --test tests/stress.test.js",
+    "lint": "node --check src/engine.js && node --check src/state.js && node --check src/planner.js && node --check src/app.js && node --check scripts/update-data.mjs && node --check scripts/simulate.mjs",
+    "check": "npm run lint && npm test",
+    "update:data": "node scripts/update-data.mjs",
     "serve": "python3 -m http.server 8080"
   }
 }
