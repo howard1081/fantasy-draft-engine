@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v3-20260908-playoffs';
+const CACHE_NAME = 'fantasy-draft-engine-v4-20260908-matchups';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const CORE_ASSETS = [
   './src/state.js',
   './data/players.json',
   './data/metadata.json',
+  './data/matchups.json',
 ];
 
 self.addEventListener('install', (event) => {

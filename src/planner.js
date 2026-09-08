@@ -21,6 +21,38 @@ export function weekWeight(week) {
 }
 // Starter games weighted so a playoff week counts PLAYOFF_WEIGHT regular weeks.
 export const WEIGHTED_GAMES = GAMES + PLAYOFF_WEEKS.length * (PLAYOFF_WEIGHT - 1);
+
+// Defense-vs-position matchups: last season's points allowed is a noisy prior,
+// so it is shrunk toward neutral and capped before touching any weekly value.
+export const MATCHUP_WEIGHT = 0.5;
+export const MATCHUP_CAP = 0.1;
+let matchups = null;
+
+export function setMatchups(data) {
+  matchups = data && data.schedule && data.defense ? data : null;
+}
+
+export function matchupGame(player, week) {
+  return matchups?.schedule?.[player.team]?.[week] ?? null;
+}
+
+export function matchupFactor(player, week) {
+  const game = matchupGame(player, week);
+  const ratio = game?.opponent ? matchups.defense?.[game.opponent]?.[player.position] : null;
+  if (!Number.isFinite(ratio)) return 1;
+  return 1 + Math.max(-MATCHUP_CAP, Math.min(MATCHUP_CAP, MATCHUP_WEIGHT * (ratio - 1)));
+}
+
+export function playoffOutlook(player) {
+  if (!matchups) return null;
+  const games = PLAYOFF_WEEKS.map((week) => {
+    const game = matchupGame(player, week);
+    return { week, opponent: game?.opponent ?? null, home: game?.home ?? null, factor: matchupFactor(player, week) };
+  });
+  const factor = games.reduce((sum, game) => sum + game.factor, 0) / games.length;
+  const label = factor >= 1.04 ? 'soft' : factor <= 0.96 ? 'tough' : 'neutral';
+  return { games, factor, label };
+}
 const FLEX_POSITIONS = ['RB', 'WR', 'TE'];
 const MAX_DEPTH = 6;
 const FORBIDDEN = -1e6;
@@ -112,10 +144,10 @@ export function rosterSeasonValue(rosterPlayers, settings = DEFAULT_SETTINGS, wa
         const cover = bestCover(starter, lineup.bench, week, used, waiver);
         if (cover) {
           used.add(cover.id);
-          total += weight * coverValue(cover, waiver);
+          total += weight * coverValue(cover, waiver) * matchupFactor(cover, week);
         }
       } else {
-        total += weight * effectivePpg(starter.player);
+        total += weight * effectivePpg(starter.player) * matchupFactor(starter.player, week);
       }
     }
   }
@@ -358,10 +390,20 @@ function buildReasons(candidate, context) {
     reasons.push(`+${baselineDelta.toFixed(0)} season pts vs ${context.baseline.player.name}`);
   }
   const nextPlan = plan.picks.find((pick) => pick.starter) ?? plan.picks[0];
+  const playoffs = playoffOutlook(player);
+  if (playoffs && playoffs.label !== 'neutral') {
+    reasons.push(`${playoffs.label} playoff slate (${playoffSlate(playoffs)})`);
+  }
   if (nextPlan) reasons.push(`next: ${nextPlan.position} in R${nextPlan.round}`);
   for (const warning of byeWarnings) reasons.push(warning);
   if (!reasons.length) reasons.push('best projected roster through the draft');
-  return reasons.slice(0, 4);
+  return reasons.slice(0, 5);
+}
+
+export function playoffSlate(outlook) {
+  return outlook.games
+    .map((game) => (game.opponent ? `${game.home ? 'vs' : '@'}${game.opponent}` : 'bye'))
+    .join(' ');
 }
 
 function byeWarningsFor(player, rosterPlayers) {

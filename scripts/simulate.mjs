@@ -1,9 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { DEFAULT_SETTINGS, deriveDraftState, roundForPick, teamOnClock } from '../src/engine.js';
-import { planPick, rosterSeasonValue, byeConflicts, waiverLevels } from '../src/planner.js';
+import { planPick, rosterSeasonValue, byeConflicts, waiverLevels, setMatchups } from '../src/planner.js';
 import { applyPick, createInitialState } from '../src/state.js';
 
 const players = JSON.parse(readFileSync(new URL('../data/players.json', import.meta.url), 'utf8'));
+setMatchups(JSON.parse(readFileSync(new URL('../data/matchups.json', import.meta.url), 'utf8')));
 const teams = Number(process.argv[2] ?? 12);
 const slot = Number(process.argv[3] ?? 1);
 const verbose = process.argv.includes('--verbose');

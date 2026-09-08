@@ -12,6 +12,9 @@ import {
   fillLineup,
   planPick,
   playerPpg,
+  playoffOutlook,
+  playoffSlate,
+  setMatchups,
 } from './planner.js';
 import {
   applyPick,
@@ -53,10 +56,13 @@ initialize();
 
 async function initialize() {
   try {
-    [players, metadata] = await Promise.all([
+    let matchups;
+    [players, metadata, matchups] = await Promise.all([
       fetch('data/players.json').then(requireSuccessfulResponse).then((response) => response.json()),
       fetch('data/metadata.json').then(requireSuccessfulResponse).then((response) => response.json()),
+      fetch('data/matchups.json').then((response) => (response.ok ? response.json() : null)).catch(() => null),
     ]);
+    setMatchups(matchups);
     const playerIds = new Set(players.map((player) => player.id));
     state = loadState(localStorage, playerIds);
     bindEvents();
@@ -212,7 +218,8 @@ function renderHero(plan, draftComplete) {
             <p>${escapeHtml(player.team)} · ${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'} · ${player.position}${player.positionRank} · ADP ${formatNumber(player.adp)}</p>
           </div>
         </div>
-        <div class="reason-chips">${result.reasons.filter((reason) => !/chance still there/.test(reason)).map((reason) => `<span class="${/same bye|stacked/.test(reason) ? 'warn' : ''}">${escapeHtml(reason)}</span>`).join('')}</div>
+        <div class="reason-chips">${result.reasons.filter((reason) => !/chance still there|playoff slate/.test(reason)).map((reason) => `<span class="${/same bye|stacked/.test(reason) ? 'warn' : ''}">${escapeHtml(reason)}</span>`).join('')}</div>
+        ${renderPlayoffSlate(player)}
         ${renderAvailabilityNote(player)}
       </div>
       <div class="score-block">
@@ -416,13 +423,16 @@ function renderRoster(derived) {
     return;
   }
   const lineup = fillLineup(rosterPlayers, settings);
-  const row = (slot, player) => `
+  const row = (slot, player) => {
+    const playoffs = playoffOutlook(player);
+    return `
     <div class="lineup-row">
       <span>${slot}</span>
       <strong>${escapeHtml(player.name)} <small>${escapeHtml(player.team)} · ${player.position}</small></strong>
-      <em>${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'}</em>
+      <em>${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'}${playoffs ? ` · <b class="playoff-tag ${playoffs.label}" title="Weeks 15-17: ${escapeHtml(playoffSlate(playoffs))}">PO ${playoffs.label}</b>` : ''}</em>
     </div>
   `;
+  };
   elements.roster.innerHTML = `
     ${lineup.starters.map((starter) => row(starter.slot, starter.player)).join('')}
     ${lineup.openSlots.map((slot) => `<div class="lineup-row open"><span>${slot.slot}</span><strong>Open</strong><em></em></div>`).join('')}
@@ -620,6 +630,12 @@ function formatDate(value) {
   if (!value) return 'unknown';
   return new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
     .format(new Date(value));
+}
+
+function renderPlayoffSlate(player) {
+  const playoffs = playoffOutlook(player);
+  if (!playoffs) return '';
+  return `<small class="playoff-slate"><strong>Playoffs (wk 15-17):</strong> ${escapeHtml(playoffSlate(playoffs))} <b class="playoff-tag ${playoffs.label}">${playoffs.label}</b></small>`;
 }
 
 function renderAvailabilityNote(player) {

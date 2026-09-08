@@ -1,9 +1,9 @@
 {
-  "snapshotDate": "2026-09-08T02:07:25.705Z",
+  "snapshotDate": "2026-09-08T20:57:45.158Z",
   "season": 2026,
   "scoring": "Full PPR",
   "leagueSize": 12,
-  "playerCount": 415,
+  "playerCount": 414,
   "adpSource": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
   "secondaryAdpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
   "projectionSource": "ESPN 2026 season projections (PPR default league)",

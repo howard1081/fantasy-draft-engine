@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { DEFAULT_SETTINGS, deriveDraftState, roundForPick, teamOnClock } from '../src/engine.js';
 import {
+  MATCHUP_CAP,
   PLAYOFF_WEEKS,
   PLAYOFF_WEIGHT,
   WEIGHTED_GAMES,
@@ -10,8 +11,12 @@ import {
   effectivePpg,
   expectedPositionValues,
   fillLineup,
+  matchupFactor,
   planPick,
+  playoffOutlook,
+  playoffSlate,
   rosterSeasonValue,
+  setMatchups,
   waiverLevels,
   weekWeight,
 } from '../src/planner.js';
@@ -26,6 +31,31 @@ import {
 const REAL_PLAYERS = JSON.parse(
   readFileSync(new URL('../data/players.json', import.meta.url), 'utf8'),
 );
+const REAL_MATCHUPS = JSON.parse(
+  readFileSync(new URL('../data/matchups.json', import.meta.url), 'utf8'),
+);
+
+const syntheticMatchups = () => {
+  const week = (opponent) => ({ opponent, home: true });
+  const schedule = {};
+  for (const team of ['SOFT', 'TOUGH', 'EVEN']) {
+    schedule[team] = {};
+    for (let index = 1; index <= 18; index += 1) {
+      schedule[team][index] = team === 'SOFT' ? week('SIEVE') : team === 'TOUGH' ? week('WALL') : week('AVG');
+    }
+    schedule[team][5] = null;
+  }
+  return {
+    season: 2026,
+    playoffWeeks: [15, 16, 17],
+    schedule,
+    defense: {
+      SIEVE: { QB: 1.4, RB: 1.3, WR: 1.25, TE: 1.6, DST: 2.2, K: 1.2 },
+      WALL: { QB: 0.6, RB: 0.7, WR: 0.84, TE: 0.5, DST: 0.3, K: 0.8 },
+      AVG: { QB: 1, RB: 1, WR: 1, TE: 1, DST: 1, K: 1 },
+    },
+  };
+};
 
 const PP = (id, position, adp, ppg, { bye = 5, risk = 20, status = 'ACTIVE', team = 'X', adpSd = 6 } = {}) => ({
   id,
@@ -134,6 +164,87 @@ test('fantasy-playoff weeks count more than regular-season weeks in the lineup o
   const { total } = rosterSeasonValue(only, DEFAULT_SETTINGS, waiver);
   const expected = only.reduce((sum, player) => sum + effectivePpg(player) * WEIGHTED_GAMES, 0);
   assert.ok(Math.abs(total - expected) < 1e-6, `weighted season total ${total} should equal ${expected}`);
+});
+
+test('matchup factors are neutral without data, shrunk toward 1 and hard-capped with it', () => {
+  setMatchups(null);
+  const qb = PP('QB1', 'QB', 20, 22, { team: 'SOFT' });
+  assert.equal(matchupFactor(qb, 15), 1);
+  assert.equal(playoffOutlook(qb), null);
+
+  setMatchups(syntheticMatchups());
+  try {
+    assert.equal(matchupFactor(qb, 15), 1 + MATCHUP_CAP, 'a huge raw edge is capped');
+    assert.equal(matchupFactor({ ...qb, team: 'TOUGH' }, 15), 1 - MATCHUP_CAP);
+    assert.equal(matchupFactor({ ...qb, team: 'EVEN' }, 15), 1);
+    assert.equal(matchupFactor({ ...qb, team: 'SOFT' }, 5), 1, 'bye week has no matchup');
+    assert.equal(matchupFactor({ ...qb, team: 'FA' }, 15), 1, 'unknown team is neutral');
+    const wr = PP('WR1', 'WR', 3, 19, { team: 'SOFT' });
+    assert.equal(matchupFactor(wr, 15), 1 + MATCHUP_CAP, 'WR 1.25 raw shrinks by half then caps');
+    assert.ok(Math.abs(matchupFactor({ ...wr, team: 'TOUGH' }, 15) - 0.92) < 1e-9, 'WR 0.84 raw shrinks by half to 0.92');
+    const outlook = playoffOutlook({ ...qb, team: 'TOUGH' });
+    assert.equal(outlook.label, 'tough');
+    assert.equal(playoffSlate(outlook), 'vsWALL vsWALL vsWALL');
+    assert.equal(playoffOutlook({ ...qb, team: 'EVEN' }).label, 'neutral');
+  } finally {
+    setMatchups(null);
+  }
+});
+
+test('matchups act as a bounded tiebreaker in the lineup objective, with playoff weeks weighted', () => {
+  setMatchups(syntheticMatchups());
+  try {
+    const waiver = { QB: 0, RB: 0, WR: 0, TE: 0, DST: 0, K: 0 };
+    const core = [PP('RB2', 'RB', 10, 16), PP('WR1', 'WR', 3, 19), PP('WR2', 'WR', 12, 15), PP('TE1', 'TE', 25, 13), PP('K1', 'K', 150, 8), PP('DST1', 'DST', 140, 7)];
+    const soft = rosterSeasonValue([...core, PP('QB1', 'QB', 20, 20, { team: 'SOFT' })], DEFAULT_SETTINGS, waiver).total;
+    const tough = rosterSeasonValue([...core, PP('QB1', 'QB', 20, 20, { team: 'TOUGH' })], DEFAULT_SETTINGS, waiver).total;
+    const even = rosterSeasonValue([...core, PP('QB1', 'QB', 20, 20, { team: 'EVEN' })], DEFAULT_SETTINGS, waiver).total;
+    assert.ok(soft > even && even > tough);
+    const qbSeason = effectivePpg(PP('QB1', 'QB', 20, 20)) * WEIGHTED_GAMES;
+    assert.ok(soft - even <= qbSeason * MATCHUP_CAP + 1e-6, 'matchup swing never exceeds the cap');
+    assert.ok(even - tough <= qbSeason * MATCHUP_CAP + 1e-6);
+    // A clearly better player beats the softest possible schedule: matchups are a tiebreaker.
+    const better = rosterSeasonValue([...core, PP('QB1', 'QB', 20, 22.5, { team: 'EVEN' })], DEFAULT_SETTINGS, waiver).total;
+    assert.ok(better > soft);
+  } finally {
+    setMatchups(null);
+  }
+});
+
+test('generated matchup table covers 32 teams, playoff weeks and bounded factors for the real pool', () => {
+  assert.deepEqual(REAL_MATCHUPS.playoffWeeks, PLAYOFF_WEEKS);
+  assert.equal(Object.keys(REAL_MATCHUPS.schedule).length, 32);
+  assert.equal(Object.keys(REAL_MATCHUPS.defense).length, 32);
+  for (const [team, weeks] of Object.entries(REAL_MATCHUPS.schedule)) {
+    assert.ok(REAL_MATCHUPS.defense[team], `${team} has a defense profile`);
+    for (const week of PLAYOFF_WEEKS) {
+      const game = weeks[week];
+      if (game) assert.ok(REAL_MATCHUPS.schedule[game.opponent], `${team} wk${week} opponent ${game.opponent} exists`);
+    }
+    for (const position of ['QB', 'RB', 'WR', 'TE']) {
+      assert.ok(REAL_MATCHUPS.defense[team][position] > 0.3 && REAL_MATCHUPS.defense[team][position] < 2.5, `${team} ${position}`);
+    }
+  }
+  setMatchups(REAL_MATCHUPS);
+  try {
+    const teams = new Set(REAL_PLAYERS.map((player) => player.team));
+    const unknown = [...teams].filter((team) => !REAL_MATCHUPS.schedule[team]);
+    assert.deepEqual(unknown.filter((team) => team !== 'FA'), [], 'every rostered NFL team has a schedule');
+    let labels = { soft: 0, tough: 0, neutral: 0 };
+    for (const player of REAL_PLAYERS.filter((candidate) => candidate.status === 'ACTIVE')) {
+      for (let week = 1; week <= 18; week += 1) {
+        const factor = matchupFactor(player, week);
+        assert.ok(factor >= 1 - MATCHUP_CAP && factor <= 1 + MATCHUP_CAP);
+      }
+      const outlook = playoffOutlook(player);
+      labels[outlook.label] += 1;
+    }
+    assert.ok(labels.soft > 0 && labels.tough > 0 && labels.neutral > 0, JSON.stringify(labels));
+    const plan = planPick(REAL_PLAYERS, createInitialState(DEFAULT_SETTINGS), DEFAULT_SETTINGS, 9);
+    assert.ok(plan.best.player.v31Rank <= 8, 'matchup tiebreaker does not upend the opening pick');
+  } finally {
+    setMatchups(null);
+  }
 });
 
 test('a backup QB on a different bye is worth more than one sharing the starter bye', () => {

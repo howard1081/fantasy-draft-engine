@@ -84,6 +84,11 @@ h2 { font-size: 1.1rem; letter-spacing: -.02em; }
 .availability-note { display: block; margin-top: .35rem; color: #ffd08a; font-size: .72rem; line-height: 1.35; }
 .player-summary .availability-note { overflow: visible; text-overflow: clip; overflow-wrap: anywhere; white-space: normal; }
 .hero .availability-note { margin: .65rem 0 0 3.25rem; }
+.playoff-slate { display: block; margin: .65rem 0 0 3.25rem; color: var(--muted); font-size: .72rem; line-height: 1.35; }
+.playoff-slate strong { color: #cfe0f2; }
+.playoff-tag { padding: .1rem .4rem; border-radius: 999px; background: #263950; color: #cfe0f2; font-size: .62rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.playoff-tag.soft { background: var(--accent-dark); color: var(--accent); }
+.playoff-tag.tough { background: #4b2a31; color: #ffb0b0; }
 .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
 .hero-footer strong { color: var(--text); }
 .hero-actions { display: flex; gap: .6rem; }
