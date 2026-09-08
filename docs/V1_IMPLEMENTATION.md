@@ -38,3 +38,12 @@ The final score retains the V3.1 weights in `ALGORITHM_V3_1.md`. Named penalties
 
 ## League size
 Supported league sizes are 10, 12, 14, and 16 teams with 10-20 rounds. The September 7 draft-night snapshot has 262 ACTIVE players, so a 16-team, 16-round draft leaves six fallback selections.
+
+## Lookahead planner
+`src/planner.js` layers a multi-pick planner on top of the V3.1 engine. `planPick(players, state, settings)` returns the recommended branch, ranked alternatives, the V3.1 baseline, a per-position outlook (best now, chance it is gone by the next user pick, expected best available at that pick), and roster bye conflicts. Each candidate carries `total` (projected season lineup points through the draft), `plan.picks` (position/slot targets for every remaining user pick), `nextGone`, `reachGone` (off-clock only), bye warnings and human-readable reasons. `fillLineup`, `rosterSeasonValue`, `waiverLevels`, `byeConflicts` and `expectedPositionValues` are exported for the UI and tests. The hero, Live Board and Draft Plan panels render this output; the V3.1 label is still shown on the hero.
+
+## Draft-log corrections
+`replacePick(state, pick, playerId, owner)` and `deletePick(state, pick)` in `src/state.js` edit any historical event. Replacement keeps the pick number; deletion removes the event and `validateState` renumbers later picks and their team attribution. The Draft Log lists every pick (filterable by team) with a Fix action that opens the correction dialog; My Team shows the projected starting lineup with PPG and byes. Both panels scroll independently on desktop and mobile.
+
+## Data
+`scripts/update-data.mjs` now merges ESPN projections/ADP/injury status/byes with FantasyFootballCalculator ADP and the V3.1 seed. `data/players.json` rows carry `projectedPoints`, `ppg`, `espnAdp`, `ffcAdp`, `espnRank`, `injuryStatus` and `bye`. Run `npm run update:data` before a draft; `node scripts/simulate.mjs <teams> <slot> --verbose` replays a planner-driven draft for review.

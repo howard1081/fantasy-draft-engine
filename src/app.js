@@ -3,19 +3,26 @@ import {
   currentRosterNeeds,
   deriveDraftState,
   nextMyPick,
-  recommend,
   roundForPick,
   searchAvailable,
   teamOnClock,
 } from './engine.js';
 import {
+  byeConflicts,
+  fillLineup,
+  planPick,
+  playerPpg,
+} from './planner.js';
+import {
   applyPick,
   clearState,
   createInitialState,
+  deletePick,
   exportState,
   importState,
   loadState,
   normalizeSettings,
+  replacePick,
   saveState,
   undoPick,
 } from './state.js';
@@ -25,10 +32,13 @@ const elements = Object.fromEntries(
     'pickNumber', 'roundNumber', 'onClock', 'nextPick', 'hero', 'recommendations',
     'positionFilters', 'availableList', 'searchInput', 'roster', 'rosterNeeds',
     'quickSearch', 'quickForm', 'quickResults', 'quickClear', 'quickHint',
-    'boardSection', 'availableSection',
+    'boardSection', 'availableSection', 'planSection', 'planTitle', 'planValue', 'planStrip', 'outlook',
+    'byeConflicts', 'logFilter',
     'recentPicks', 'undoBtn', 'settingsBtn', 'settingsDialog', 'teamsSelect',
     'roundsInput', 'slotSelect', 'settingsForm', 'myTeamTitle', 'rosterCount',
     'exportBtn', 'importBtn', 'importInput', 'resetBtn', 'dataSnapshot', 'toast',
+    'fixDialog', 'fixTitle', 'fixCurrent', 'fixOwnerOpponent', 'fixOwnerMe', 'fixSearch', 'fixResults',
+    'fixDelete', 'fixClose',
   ].map((id) => [id, document.getElementById(id)]),
 );
 
@@ -37,6 +47,7 @@ let metadata = {};
 let state;
 let positionFilter = 'ALL';
 let actionLocked = false;
+let fixingPick = null;
 
 initialize();
 
@@ -76,6 +87,14 @@ function bindEvents() {
   elements.importBtn.addEventListener('click', () => elements.importInput.click());
   elements.importInput.addEventListener('change', uploadState);
   elements.resetBtn.addEventListener('click', resetDraft);
+  elements.logFilter.addEventListener('change', () => renderRecent(deriveDraftState(players, state, normalizeSettings(state.settings))));
+  elements.fixSearch.addEventListener('input', renderFixResults);
+  elements.fixDelete.addEventListener('click', deleteFixingPick);
+  elements.fixClose.addEventListener('click', () => elements.fixDialog.close());
+  elements.fixDialog.addEventListener('close', () => { fixingPick = null; });
+  elements.fixDialog.addEventListener('click', (event) => {
+    if (event.target === elements.fixDialog) elements.fixDialog.close();
+  });
 }
 
 function handleActionClick(event) {
@@ -84,6 +103,22 @@ function handleActionClick(event) {
     positionFilter = filterButton.dataset.filter;
     renderFilters();
     renderAvailable();
+    return;
+  }
+
+  const fixButton = event.target.closest('[data-fix-pick]');
+  if (fixButton) {
+    openFixDialog(Number(fixButton.dataset.fixPick));
+    return;
+  }
+  const ownerButton = event.target.closest('[data-fix-owner]');
+  if (ownerButton && fixingPick !== null) {
+    correctPick(null, ownerButton.dataset.fixOwner);
+    return;
+  }
+  const replaceButton = event.target.closest('[data-replace-player]');
+  if (replaceButton && fixingPick !== null) {
+    correctPick(replaceButton.dataset.replacePlayer, null);
     return;
   }
 
@@ -120,7 +155,7 @@ function render() {
   const derived = deriveDraftState(players, state, settings);
   const maxPick = settings.teams * settings.rounds;
   const draftComplete = state.pickNumber > maxPick;
-  const recommendations = draftComplete ? [] : recommend(players, state, settings, 9);
+  const plan = draftComplete ? null : planPick(players, state, settings, 9);
   const onClock = draftComplete ? null : teamOnClock(state.pickNumber, settings.teams);
   const upcoming = draftComplete
     ? null
@@ -140,53 +175,100 @@ function render() {
   elements.rosterCount.textContent = `${derived.myIds.length} / ${settings.rounds}`;
   elements.dataSnapshot.textContent = `Data snapshot ${formatDate(metadata.snapshotDate)} · ${metadata.playerCount ?? players.length} players`;
 
-  renderHero(recommendations[0], draftComplete);
+  renderHero(plan, draftComplete);
+  renderPlan(plan, draftComplete);
   renderQuick();
-  renderRecommendations(recommendations.slice(1));
+  renderRecommendations(plan?.candidates.slice(1) ?? [], plan?.best?.total ?? 0);
   renderAvailable();
   renderRoster(derived);
   renderRecent(derived);
 }
 
-function renderHero(result, draftComplete) {
+function renderHero(plan, draftComplete) {
   if (draftComplete) {
     elements.hero.innerHTML = '<div class="empty-state"><strong>Draft complete</strong><span>Your full draft is saved on this device.</span></div>';
     return;
   }
+  const result = plan?.best;
   if (!result) {
     elements.hero.innerHTML = '<div class="empty-state"><strong>No eligible recommendations</strong><span>Check the remaining player pool or undo the last pick.</span></div>';
     return;
   }
 
   const { player } = result;
+  const baseline = plan.baseline;
+  const beatsBaseline = baseline && baseline.player.id !== player.id && result.total - baseline.total >= 0.5;
+  const label = plan.onClock
+    ? `YOUR PICK · ${plan.futurePicks.length} PICKS PLANNED AHEAD`
+    : `TARGET FOR YOUR PICK #${plan.currentPick}`;
   elements.hero.innerHTML = `
-    <div class="hero-label">BEST AVAILABLE PICK</div>
+    <div class="hero-label">${label}</div>
     <div class="hero-main">
       <div>
         <div class="player-heading">
           <span class="position-badge ${player.position.toLowerCase()}">${player.position}</span>
           <div>
             <h2>${escapeHtml(player.name)}</h2>
-            <p>${escapeHtml(player.team)} · V3.1 #${player.v31Rank} · ${player.position}${player.positionRank} · ADP ${formatNumber(player.adp)}</p>
+            <p>${escapeHtml(player.team)} · ${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'} · ${player.position}${player.positionRank} · ADP ${formatNumber(player.adp)}</p>
           </div>
         </div>
-        <div class="reason-chips">${result.reasons.map((reason) => `<span>${escapeHtml(reason)}</span>`).join('')}</div>
+        <div class="reason-chips">${result.reasons.filter((reason) => !/chance still there/.test(reason)).map((reason) => `<span class="${/same bye|stacked/.test(reason) ? 'warn' : ''}">${escapeHtml(reason)}</span>`).join('')}</div>
         ${renderAvailabilityNote(player)}
       </div>
       <div class="score-block">
-        <span>Dynamic score</span>
-        <strong>${result.score.toFixed(1)}</strong>
-        <em class="value-label ${result.label.toLowerCase()}">${result.label}</em>
+        <span>Roster pts</span>
+        <strong>${Math.round(result.total)}</strong>
+        <em class="value-label ${(result.v31?.label ?? 'plan').toLowerCase()}">${result.v31?.label ?? 'PLAN'}</em>
       </div>
     </div>
     <div class="hero-footer">
-      <span><strong>${Math.round(result.gone * 100)}%</strong> projected gone before next turn</span>
+      <span>${plan.onClock
+        ? `<strong>${Math.round(result.nextGone * 100)}%</strong> gone before your next turn`
+        : `<strong>${Math.round((1 - result.reachGone) * 100)}%</strong> chance still there at #${plan.currentPick}`}${beatsBaseline ? ` · beats best-available <strong>${escapeHtml(baseline.player.name)}</strong> by ${Math.max(1, Math.round(result.total - baseline.total))} pts` : ''}</span>
       <div class="hero-actions">
         <button class="button draft-button" data-player-id="${player.id}" data-owner="ME" type="button">Draft ${escapeHtml(player.name)}</button>
         <button class="button taken-button" data-player-id="${player.id}" data-owner="OPPONENT" type="button">Taken</button>
       </div>
     </div>
   `;
+}
+
+function renderPlan(plan, draftComplete) {
+  if (draftComplete || !plan?.best) {
+    elements.planSection.hidden = true;
+    return;
+  }
+  elements.planSection.hidden = false;
+  const picks = plan.best.plan.picks;
+  elements.planTitle.textContent = plan.onClock
+    ? `After ${plan.best.player.name}, your next ${picks.length} picks`
+    : `If you land ${plan.best.player.name} at #${plan.currentPick}`;
+  elements.planValue.textContent = `${Math.round(plan.currentValue)} → ${Math.round(plan.best.total)} pts`;
+  elements.planStrip.innerHTML = picks.length
+    ? picks.map((pick) => `
+      <div class="plan-step ${pick.starter ? 'starter' : ''}">
+        <span>R${pick.round} · #${pick.pick}</span>
+        <strong class="pos-${pick.position.toLowerCase()}">${pick.position === 'DEPTH' ? 'Depth' : pick.position}</strong>
+        <em>${pick.expectedPpg ? `~${pick.expectedPpg.toFixed(1)} ppg` : 'best value'}</em>
+      </div>
+    `).join('')
+    : '<p class="muted plan-empty">This is your final pick.</p>';
+
+  const rows = ['QB', 'RB', 'WR', 'TE'].map((position) => {
+    const outlook = plan.outlook[position];
+    if (!outlook.bestNow) return '';
+    const drop = outlook.nowPpg - outlook.nextPpg;
+    return `
+      <div class="outlook-row">
+        <span class="position-badge small ${position.toLowerCase()}">${position}</span>
+        <div class="outlook-now"><strong>${escapeHtml(outlook.bestNow.name)}</strong><small>${formatNumber(outlook.nowPpg)} ppg now · ${Math.round(outlook.bestNowGone * 100)}% gone by #${plan.futurePicks[0] ?? '—'}</small></div>
+        <div class="outlook-next ${drop >= 2 ? 'cliff' : ''}"><strong>~${formatNumber(outlook.nextPpg)}</strong><small>expected at your next pick</small></div>
+      </div>
+    `;
+  }).join('');
+  elements.outlook.innerHTML = plan.futurePicks.length
+    ? `<div class="outlook-head">What the room leaves you</div>${rows}`
+    : '';
 }
 
 function quickMatches() {
@@ -253,22 +335,23 @@ function clearQuickSearch() {
   elements.quickSearch.focus();
 }
 
-function renderRecommendations(results) {
+function renderRecommendations(results, bestTotal) {
   if (!results.length) {
     elements.recommendations.innerHTML = '<p class="muted">No alternatives remain.</p>';
     return;
   }
   elements.recommendations.innerHTML = results.map((result, index) => {
     const { player } = result;
+    const diff = Math.round(result.total - bestTotal);
     return `
       <article class="recommendation-row">
         <span class="rank-number">${index + 2}</span>
         <div class="player-summary">
-          <div><strong>${escapeHtml(player.name)}</strong><span>${player.position} · ${escapeHtml(player.team)} · ADP ${formatNumber(player.adp)}</span></div>
+          <div><strong>${escapeHtml(player.name)}</strong><span>${player.position} · ${escapeHtml(player.team)} · ${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'} · ADP ${formatNumber(player.adp)}</span></div>
           <small>${escapeHtml(result.reasons.join(' · '))}</small>
           ${renderAvailabilityNote(player)}
         </div>
-        <div class="compact-score"><strong>${result.score.toFixed(1)}</strong><span>${result.label}</span></div>
+        <div class="compact-score"><strong>${Math.round(result.total)}</strong><span>${diff === 0 ? 'even' : `${diff} pts`}</span></div>
         <div class="row-actions">
           <button class="button draft-small" data-player-id="${player.id}" data-owner="ME" type="button">Draft</button>
           <button class="button taken-small" data-player-id="${player.id}" data-owner="OPPONENT" type="button">Taken</button>
@@ -322,38 +405,138 @@ function renderRoster(derived) {
     : '<span class="complete">Starter needs covered</span>';
 
   const rosterPlayers = derived.myIds.map((id) => derived.playersById[id]).filter(Boolean);
+  const conflicts = byeConflicts(rosterPlayers);
+  elements.byeConflicts.innerHTML = conflicts.length
+    ? conflicts.map((conflict) => `
+      <span class="${conflict.samePosition.length ? 'warn' : ''}">Bye ${conflict.bye}: ${conflict.players.map((player) => player.position).join('/')}${conflict.samePosition.length ? ` — ${conflict.samePosition.join('/')} doubled` : ''}</span>
+    `).join('')
+    : '';
   if (!rosterPlayers.length) {
     elements.roster.innerHTML = '<p class="muted">Your selections will appear here.</p>';
     return;
   }
-  elements.roster.innerHTML = POSITIONS.map((position) => {
-    const atPosition = rosterPlayers.filter((player) => player.position === position);
-    if (!atPosition.length) return '';
+  const lineup = fillLineup(rosterPlayers, settings);
+  const row = (slot, player) => `
+    <div class="lineup-row">
+      <span>${slot}</span>
+      <strong>${escapeHtml(player.name)} <small>${escapeHtml(player.team)} · ${player.position}</small></strong>
+      <em>${formatNumber(playerPpg(player))} ppg · bye ${player.bye ?? '—'}</em>
+    </div>
+  `;
+  elements.roster.innerHTML = `
+    ${lineup.starters.map((starter) => row(starter.slot, starter.player)).join('')}
+    ${lineup.openSlots.map((slot) => `<div class="lineup-row open"><span>${slot.slot}</span><strong>Open</strong><em></em></div>`).join('')}
+    ${lineup.bench.length ? `<div class="lineup-divider">Bench</div>${lineup.bench.map((player) => row('BN', player)).join('')}` : ''}
+  `;
+}
+
+function renderRecent(derived) {
+  const filter = elements.logFilter.value;
+  const settings = normalizeSettings(state.settings);
+  const teamOptions = Array.from({ length: settings.teams }, (_, index) => index + 1)
+    .filter((team) => team !== settings.mySlot)
+    .map((team) => `<option value="${team}">Team ${team}</option>`).join('');
+  if (elements.logFilter.options.length !== settings.teams + 1) {
+    elements.logFilter.innerHTML = `<option value="ALL">All teams</option><option value="ME">My team</option>${teamOptions}`;
+    elements.logFilter.value = ['ALL', 'ME'].includes(filter) || Number(filter) <= settings.teams ? filter : 'ALL';
+  }
+  const active = elements.logFilter.value;
+  const events = state.events
+    .filter((event) => active === 'ALL'
+      || (active === 'ME' ? event.owner === 'ME' : (event.owner !== 'ME' && event.teamIndex === Number(active))))
+    .reverse();
+  if (!events.length) {
+    elements.recentPicks.innerHTML = '<p class="muted">No picks registered yet.</p>';
+    return;
+  }
+  elements.recentPicks.innerHTML = events.map((event) => {
+    const player = derived.playersById[event.playerId];
     return `
-      <div class="roster-group">
-        <span>${position}</span>
-        <div>${atPosition.map((player) => `<strong>${escapeHtml(player.name)} <small>${escapeHtml(player.team)}</small></strong>`).join('')}</div>
+      <div class="recent-row ${event.owner === 'ME' ? 'mine' : ''}">
+        <span>R${event.round} · #${event.pick}</span>
+        <strong>${escapeHtml(player?.name ?? event.playerId)} <small>${player ? `${player.position} · ${escapeHtml(player.team)}` : ''}</small></strong>
+        <em>${event.owner === 'ME' ? 'MY TEAM' : `TEAM ${event.teamIndex}`}</em>
+        <button class="button fix-button" type="button" data-fix-pick="${event.pick}" aria-label="Fix pick ${event.pick}">Fix</button>
       </div>
     `;
   }).join('');
 }
 
-function renderRecent(derived) {
-  const recent = state.events.slice(-10).reverse();
-  if (!recent.length) {
-    elements.recentPicks.innerHTML = '<p class="muted">No picks registered yet.</p>';
+function openFixDialog(pick) {
+  const event = state.events.find((candidate) => candidate.pick === pick);
+  if (!event) return;
+  fixingPick = pick;
+  elements.fixSearch.value = '';
+  renderFixDialog();
+  elements.fixDialog.showModal();
+  elements.fixSearch.focus();
+}
+
+function renderFixDialog() {
+  const event = state.events.find((candidate) => candidate.pick === fixingPick);
+  if (!event) {
+    elements.fixDialog.close();
     return;
   }
-  elements.recentPicks.innerHTML = recent.map((event) => {
-    const player = derived.playersById[event.playerId];
-    return `
-      <div class="recent-row">
-        <span>#${event.pick}</span>
-        <strong>${escapeHtml(player?.name ?? event.playerId)}</strong>
-        <em>${event.owner === 'ME' ? 'MY TEAM' : `TEAM ${event.teamIndex}`}</em>
-      </div>
-    `;
-  }).join('');
+  const player = players.find((candidate) => candidate.id === event.playerId);
+  elements.fixTitle.textContent = `Round ${event.round} · Pick #${event.pick}`;
+  elements.fixCurrent.textContent = `${player?.name ?? event.playerId} · ${event.owner === 'ME' ? 'my team' : `Team ${event.teamIndex}`}`;
+  elements.fixOwnerOpponent.classList.toggle('active', event.owner === 'OPPONENT');
+  elements.fixOwnerMe.classList.toggle('active', event.owner === 'ME');
+  renderFixResults();
+}
+
+function renderFixResults() {
+  const query = elements.fixSearch.value;
+  if (!query.trim()) {
+    elements.fixResults.innerHTML = '<p class="muted fix-hint">Search for the player who was really picked here, or switch who picked.</p>';
+    return;
+  }
+  const derived = deriveDraftState(players, state, normalizeSettings(state.settings));
+  const matches = searchAvailable(derived.available, query);
+  if (!matches.length) {
+    elements.fixResults.innerHTML = '<p class="muted fix-hint">No available player matches that search.</p>';
+    return;
+  }
+  elements.fixResults.innerHTML = matches.slice(0, 6).map((player) => `
+    <button class="fix-result" type="button" data-replace-player="${player.id}">
+      <span class="position-badge small ${player.position.toLowerCase()}">${player.position}</span>
+      <strong>${escapeHtml(player.name)}</strong>
+      <small>${escapeHtml(player.team)} · ADP ${formatNumber(player.adp)}</small>
+    </button>
+  `).join('');
+}
+
+function correctPick(playerId, owner) {
+  const event = state.events.find((candidate) => candidate.pick === fixingPick);
+  if (!event) return;
+  try {
+    const nextPlayerId = playerId ?? event.playerId;
+    const nextOwner = owner ?? event.owner;
+    if (nextPlayerId === event.playerId && nextOwner === event.owner) return;
+    const player = players.find((candidate) => candidate.id === nextPlayerId);
+    updateState(
+      replacePick(state, fixingPick, nextPlayerId, nextOwner),
+      `Pick #${fixingPick} now ${player?.name ?? nextPlayerId} (${nextOwner === 'ME' ? 'my team' : 'opponent'})`,
+    );
+    if (playerId) elements.fixDialog.close();
+    else renderFixDialog();
+  } catch (error) {
+    showToast(error.message, true);
+  }
+}
+
+function deleteFixingPick() {
+  const event = state.events.find((candidate) => candidate.pick === fixingPick);
+  if (!event) return;
+  const player = players.find((candidate) => candidate.id === event.playerId);
+  if (!window.confirm(`Delete pick #${event.pick} (${player?.name ?? event.playerId})? Later picks move up one spot.`)) return;
+  try {
+    updateState(deletePick(state, fixingPick), `Pick #${fixingPick} deleted`);
+    elements.fixDialog.close();
+  } catch (error) {
+    showToast(error.message, true);
+  }
 }
 
 function openSettings() {

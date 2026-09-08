@@ -82,6 +82,28 @@ export function undoPick(state) {
   };
 }
 
+export function deletePick(state, pick) {
+  const index = state.events.findIndex((event) => event.pick === pick);
+  if (index === -1) throw new Error(`Pick ${pick} is not in the draft log`);
+  const events = state.events.filter((_, position) => position !== index);
+  return validateState({ ...state, events });
+}
+
+export function replacePick(state, pick, playerId, owner = null) {
+  const index = state.events.findIndex((event) => event.pick === pick);
+  if (index === -1) throw new Error(`Pick ${pick} is not in the draft log`);
+  if (owner !== null && !['ME', 'OPPONENT'].includes(owner)) throw new Error('Invalid draft owner');
+  if (state.events.some((event) => event.playerId === playerId && event.pick !== pick)) {
+    throw new Error('Player has already been drafted');
+  }
+  const events = state.events.map((event, position) => (
+    position === index
+      ? { ...event, playerId, owner: owner ?? event.owner, timestamp: Date.now() }
+      : event
+  ));
+  return validateState({ ...state, events });
+}
+
 export function validateState(candidate, playerIds = null) {
   if (!candidate || typeof candidate !== 'object') throw new Error('Draft state must be an object');
   const settings = normalizeSettings(candidate.settings);

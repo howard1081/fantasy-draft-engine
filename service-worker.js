@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fantasy-draft-engine-v1-20260907-client-refresh-v2';
+const CACHE_NAME = 'fantasy-draft-engine-v2-20260908-planner';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -10,6 +10,7 @@ const CORE_ASSETS = [
   './assets/icon-512.png',
   './src/app.js',
   './src/engine.js',
+  './src/planner.js',
   './src/state.js',
   './data/players.json',
   './data/metadata.json',

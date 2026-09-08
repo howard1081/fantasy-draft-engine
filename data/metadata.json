@@ -1,10 +1,12 @@
 {
-  "snapshotDate": "2026-09-07T19:15:45.910Z",
+  "snapshotDate": "2026-09-08T02:07:25.705Z",
   "season": 2026,
   "scoring": "Full PPR",
   "leagueSize": 12,
-  "playerCount": 263,
-  "adpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
+  "playerCount": 415,
+  "adpSource": "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/2026/segments/0/leaguedefaults/3?view=kona_player_info",
+  "secondaryAdpSource": "https://fantasyfootballcalculator.com/api/v1/adp/ppr?position=all&teams=12&year=2026",
+  "projectionSource": "ESPN 2026 season projections (PPR default league)",
   "availabilityReviewedAt": "2026-09-07T18:45:41Z",
   "availabilitySources": [
     "https://www.profootballnetwork.com/fantasy-football/fantasy-football-injury-update-latest-on-malik-nabers-jeremiyah-love-ashton-jeanty-and-others/",
@@ -15,5 +17,5 @@
     "https://www.thebiglead.com/jamarr-chase-puka-nacua-wr-injury-updates-nfl-week-1/",
     "https://www.thebiglead.com/george-kittle-sam-laporta-te-injury-updates-week-1/"
   ],
-  "methodology": "V3.1 seed overrides merged onto a current market/ADP baseline"
+  "methodology": "V3.1 seed overrides merged onto ESPN projections + ESPN/FFC ADP; ESPN injury statuses applied"
 }
